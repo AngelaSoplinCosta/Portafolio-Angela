@@ -1,4 +1,5 @@
 Angela Soplin — CX & AI Portfolio
+
 Portfolio focused on Customer Experience, Voice of Customer, digital quality, conversational AI, and process improvement.
 Selected case studies
 - Centria — B2B Voice of Customer and CX audit closure
