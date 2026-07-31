@@ -1,12 +1,40 @@
-Angela Soplin — CX & AI Portfolio
+# Portafolio de Angela Soplín
 
-Portfolio focused on Customer Experience, Voice of Customer, digital quality, conversational AI, and process improvement.
+Portafolio profesional enfocado en experiencia del cliente, voz del cliente, calidad, mejora de procesos, diseño de servicios e incorporación práctica de inteligencia artificial y automatización.
 
-Selected case studies
-Centria — B2B Voice of Customer and CX audit closure
-Estar Bien, Rímac Seguros — Digital quality and incident management
-VolverIA — Conversational AI agent for workforce re-entry
-Portfolio
+## Proyecto destacado
 
-[View portfolio in PDF](./Angela_Soplin_Portafolio.pdf)
+**VolverIA:** propuesta de agente conversacional para acompañar a mujeres que buscan reincorporarse al mercado laboral.
 
+## Estructura
+
+```text
+index.html
+css/styles.css
+js/main.js
+assets/
+  Angela_Soplin_CV_Profesional_CX_IA_2026_FINAL.pdf
+  Angela_Soplin_Portafolio_2026_FINAL.pdf
+  vuelvo-avatar.png
+  volveria-chat-1.png
+  volveria-chat-2.png
+.nojekyll
+```
+
+## Enlaces configurados
+
+- LinkedIn: `https://www.linkedin.com/in/angela-soplin-costa/`
+- Correo: `mailto:angelasc2024@gmail.com`
+- CV: `./assets/Angela_Soplin_CV_Profesional_CX_IA_2026_FINAL.pdf`
+- Portafolio PDF: `./assets/Angela_Soplin_Portafolio_2026_FINAL.pdf`
+
+## Publicación en GitHub Pages
+
+1. Crea un repositorio público en GitHub.
+2. Sube todos los archivos y carpetas de este paquete a la raíz del repositorio.
+3. Ve a **Settings → Pages**.
+4. En **Build and deployment**, selecciona **Deploy from a branch**.
+5. Elige la rama `main` y la carpeta `/(root)`.
+6. Guarda y abre la URL que GitHub genere.
+
+El sitio es estático y no requiere React, npm ni un proceso de compilación.
