@@ -1,0 +1,17 @@
+html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F3F2F0; color: #1A1A1A; font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #56807F; text-decoration: none; }
+  a:hover { color: #987E86; }
+  ::selection { background: #56807F; color: #EDF1F2; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes drawbar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll-x::-webkit-scrollbar { height: 8px; }
+  .scroll-x::-webkit-scrollbar-thumb { background: #D8D0C1; border-radius: 999px; }
+  @media (max-width: 720px) {
+    .nav-links { display: none !important; }
+  }
+@media (max-width: 640px) {
+  nav .nav-links { gap: 14px !important; font-size: 13px; }
+}
