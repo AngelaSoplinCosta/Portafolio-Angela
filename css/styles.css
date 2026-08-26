@@ -311,15 +311,7 @@ p {
   background: var(--lilac);
 }
 .projects-heading {
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
-  align-items: end;
-  gap: 48px;
   margin-bottom: 48px;
-}
-.projects-heading p:last-child {
-  max-width: 40ch;
-  margin: 0;
 }
 .project-list {
   border-top: 1px solid var(--charcoal);
