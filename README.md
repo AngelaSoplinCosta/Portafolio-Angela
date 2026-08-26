@@ -10,11 +10,16 @@ Portafolio profesional enfocado en experiencia del cliente, voz del cliente, cal
 
 ```text
 index.html
+centria.html
+estar-bien.html
+volveria.html
+sobre-mi.html
+contacto.html
 css/styles.css
-js/main.js
 assets/
   Angela_Soplin_CV_Profesional_CX_IA_2026_FINAL.pdf
   Angela_Soplin_Portafolio_2026_FINAL.pdf
+  favicon.svg
   vuelvo-avatar.png
   volveria-chat-1.png
   volveria-chat-2.png
@@ -37,4 +42,4 @@ assets/
 5. Elige la rama `main` y la carpeta `/(root)`.
 6. Guarda y abre la URL que GitHub genere.
 
-El sitio es estático y no requiere React, npm ni un proceso de compilación.
+El sitio es estático, multipágina y no requiere React, npm ni un proceso de compilación.
