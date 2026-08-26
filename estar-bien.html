@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="estar-bien-page">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
       <nav class="nav shell" aria-label="Navegación principal">
@@ -52,18 +52,30 @@
           </div>
           <div
             class="case-cover"
-            aria-label="Comparación visual del proceso antes y después"
+            aria-label="De señales dispersas a una respuesta coordinada"
           >
-            <div class="before-after">
-              <div class="process-card">
-                <b>Antes</b><span>Casos duplicados</span
-                ><span>Criterios distintos</span
-                ><span>Sin tiempos visibles</span>
+            <div class="care-system">
+              <p class="visual-label">Del hallazgo a la respuesta</p>
+              <div class="care-sources" aria-label="Fuentes de información">
+                <span>Encuestas</span><span>WhatsApp</span><span>QA</span
+                ><span>Plataforma</span>
               </div>
-              <div class="process-arrow" aria-hidden="true">→</div>
-              <div class="process-card after">
-                <b>Después</b><span>Tipificación</span><span>Criticidad</span
-                ><span>Responsables + SLA</span>
+              <div class="system-arrow" aria-hidden="true">↓</div>
+              <div class="triage-card">
+                <small>Lenguaje compartido</small>
+                <strong>Tipificar + priorizar</strong>
+                <div>
+                  <span>Tipo</span><span>Criticidad</span><span>Journey</span>
+                </div>
+              </div>
+              <div class="care-response">
+                <span><b>01</b> Responsable</span>
+                <span><b>02</b> SLA</span>
+                <span><b>03</b> Seguimiento</span>
+              </div>
+              <div class="system-outcome">
+                <span><b>75% → 90%</b> CSAT de sesiones</span>
+                <span><b>−20%</b> tiempo medio de resolución</span>
               </div>
             </div>
           </div>
@@ -76,6 +88,21 @@
         ><a href="#resultado">Resultados</a><a href="#evidencia">Evidencia</a
         ><a href="#aprendizaje">Aprendizaje</a>
       </nav>
+
+      <section class="case-snapshot" aria-label="Resumen del caso">
+        <div>
+          <span>El reto</span>
+          <strong>Feedback y casos sin una vista común</strong>
+        </div>
+        <div>
+          <span>La decisión</span>
+          <strong>Crear criterios, responsables y tiempos visibles</strong>
+        </div>
+        <div>
+          <span>El cambio</span>
+          <strong>Menos recurrencia y resolución más clara</strong>
+        </div>
+      </section>
 
       <article>
         <section class="story" id="evolucion">
@@ -162,6 +189,25 @@
         <section class="story" id="modelo">
           <div class="story-label">03 · Problema</div>
           <div class="story-content">
+            <aside class="case-companion" aria-label="Una idea de Angela">
+              <div class="case-companion-media" aria-hidden="true">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="assets/angela-pixel-poster.png"
+                >
+                  <source src="assets/angela-pixel.webm" type="video/webm" />
+                </video>
+                <img
+                  class="case-companion-poster"
+                  src="assets/angela-pixel-poster.png"
+                  alt=""
+                />
+              </div>
+              <p>Ordenar también es una forma de cuidar.</p>
+            </aside>
             <h2>Unos 100 casos al mes, pero sin un idioma compartido.</h2>
             <p class="story-intro">
               Fallas tecnológicas, errores de uso, consultas y solicitudes de
@@ -185,55 +231,54 @@
               para que cada caso llegara al equipo correcto con la información
               necesaria.
             </p>
-            <div class="detail-grid">
-              <div class="detail-card">
-                <p class="mono-label">A1</p>
-                <h3>Mapeo AS-IS</h3>
-                <p>
-                  Levanté el flujo existente y sistematicé duplicidad,
-                  escalaciones sin contexto y ausencia de tiempos.
-                </p>
-              </div>
-              <div class="detail-card">
-                <p class="mono-label">A2</p>
-                <h3>Tipificación y criticidad</h3>
-                <p>
-                  Diseñé cinco niveles según causa, impacto, alcance, journey
-                  afectado y continuidad del servicio.
-                </p>
-              </div>
-              <div class="detail-card">
-                <p class="mono-label">A3</p>
-                <h3>Flujo TO-BE</h3>
-                <p>
-                  Definí y coordiné un flujo para tipificar, priorizar y asignar
-                  cada caso.
-                </p>
-              </div>
-              <div class="detail-card">
-                <p class="mono-label">A4</p>
-                <h3>Registro trazable</h3>
-                <p>
-                  Estructuré el seguimiento en Sheets y Jira con responsables,
-                  evidencias, estados y fechas.
-                </p>
-              </div>
-              <div class="detail-card">
-                <p class="mono-label">A5</p>
-                <h3>Protocolos y SLAs</h3>
-                <p>
-                  Documenté manuales y flujos; se definieron 1–2 horas de
-                  respuesta inicial y un día como objetivo para casos críticos.
-                </p>
-              </div>
-              <div class="detail-card">
-                <p class="mono-label">A6</p>
-                <h3>Service Blueprint</h3>
-                <p>
-                  Actualicé el blueprint para visualizar responsabilidades,
-                  coordinación y mejoras del servicio.
-                </p>
-              </div>
+            <div class="action-path">
+              <section class="action-step">
+                <div class="action-number">01</div>
+                <div>
+                  <p class="mono-label">Comprender el sistema</p>
+                  <h3>Ver dónde se perdía la información.</h3>
+                  <p>
+                    Levanté el flujo AS-IS y actualicé el Service Blueprint para
+                    hacer visibles la duplicidad, las escalaciones sin contexto
+                    y las responsabilidades poco claras.
+                  </p>
+                  <div class="action-tags">
+                    <span>AS-IS</span><span>Blueprint</span><span>Journey</span>
+                  </div>
+                </div>
+              </section>
+              <section class="action-step">
+                <div class="action-number">02</div>
+                <div>
+                  <p class="mono-label">Crear un idioma común</p>
+                  <h3>Definir qué era cada caso y qué tan urgente resultaba.</h3>
+                  <p>
+                    Diseñé cinco niveles de tipificación y criticidad según
+                    causa, impacto, alcance, journey afectado y continuidad del
+                    servicio.
+                  </p>
+                  <div class="action-tags">
+                    <span>Tipificación</span><span>Criticidad</span
+                    ><span>5 niveles</span>
+                  </div>
+                </div>
+              </section>
+              <section class="action-step">
+                <div class="action-number">03</div>
+                <div>
+                  <p class="mono-label">Coordinar la respuesta</p>
+                  <h3>Asignar responsables, tiempos y seguimiento.</h3>
+                  <p>
+                    Definí y coordiné el flujo TO-BE, estructuré el registro en
+                    Sheets y Jira y documenté protocolos. Se acordaron 1–2 horas
+                    de respuesta inicial y un día como objetivo para casos
+                    críticos.
+                  </p>
+                  <div class="action-tags">
+                    <span>TO-BE</span><span>Jira + Sheets</span><span>SLAs</span>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </section>

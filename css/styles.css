@@ -953,6 +953,162 @@ p {
   color: var(--lilac);
   font-size: 18px;
 }
+.care-system,
+.volveria-system {
+  width: min(100%, 430px);
+}
+.care-system .visual-label {
+  color: var(--lilac);
+}
+.care-sources {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+.care-sources span {
+  display: grid;
+  min-height: 58px;
+  place-items: center;
+  padding: 8px 5px;
+  border: 1px solid rgba(248, 246, 241, 0.48);
+  border-radius: 11px;
+  color: var(--cream);
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+}
+.triage-card {
+  padding: 19px;
+  border-radius: 16px;
+  background: var(--cream);
+  color: var(--charcoal);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+.triage-card small,
+.volveria-identity small {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font: 500 9px/1.3 "DM Mono", monospace;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.triage-card strong {
+  display: block;
+  margin-bottom: 14px;
+  font: 650 20px/1.1 Fraunces, Georgia, serif;
+}
+.triage-card > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.triage-card span {
+  padding: 8px 5px;
+  border-radius: 7px;
+  background: var(--lilac-light);
+  color: var(--purple-dark);
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+}
+.care-response {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-top: 12px;
+}
+.care-response span {
+  padding: 10px 7px;
+  border-radius: 9px;
+  background: var(--lilac);
+  color: var(--charcoal);
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+}
+.care-response b {
+  margin-right: 3px;
+  color: var(--purple-dark);
+}
+.volveria-cover {
+  background: var(--charcoal);
+}
+.prototype-status {
+  width: max-content;
+  margin: 0 0 18px auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(248, 246, 241, 0.45);
+  border-radius: 99px;
+  color: var(--cream);
+  font: 500 9px/1.2 "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.prototype-status span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--lilac);
+}
+.volveria-identity {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 16px;
+  background: var(--cream);
+  color: var(--charcoal);
+  transform: rotate(-1deg);
+}
+.volveria-identity img {
+  width: 72px;
+  aspect-ratio: 1;
+  border: 4px solid var(--lilac);
+  border-radius: 50%;
+  object-fit: cover;
+}
+.volveria-identity strong {
+  display: block;
+  font: 650 17px/1.15 Fraunces, Georgia, serif;
+}
+.guided-chat {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+}
+.guided-chat p {
+  width: 78%;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 14px 14px 14px 4px;
+  background: var(--lilac-light);
+  color: var(--charcoal);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.guided-chat p:last-child {
+  justify-self: end;
+  border-radius: 14px 14px 4px 14px;
+  background: var(--purple-dark);
+  color: white;
+}
+.guardrail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+.guardrail-row span {
+  padding: 7px 9px;
+  border: 1px solid rgba(248, 246, 241, 0.45);
+  border-radius: 8px;
+  color: var(--cream);
+  font-size: 9px;
+  font-weight: 700;
+}
 .case-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1297,9 +1453,62 @@ p {
     600 12px "DM Mono",
     monospace;
 }
+.about-path {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: clamp(42px, 8vw, 100px);
+  padding-block: clamp(70px, 9vw, 105px);
+  border-top: 1px solid var(--line);
+}
+.about-path-heading h2 {
+  max-width: 11ch;
+  margin: 13px 0 0;
+  font: 650 clamp(33px, 4.5vw, 52px) / 1.05 Fraunces, Georgia, serif;
+  letter-spacing: -0.045em;
+}
+.about-path-steps {
+  display: grid;
+  gap: 12px;
+}
+.about-path-steps article {
+  padding: 25px 27px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--white);
+}
+.about-path-steps article:nth-child(2) {
+  margin-left: 7%;
+  background: var(--lilac-light);
+}
+.about-path-steps article:nth-child(3) {
+  margin-left: 14%;
+  background: var(--lilac);
+}
+.about-path-steps span {
+  color: var(--purple-dark);
+  font: 600 10px/1.4 "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.about-path-steps h3 {
+  margin: 9px 0 7px;
+  font: 650 22px/1.15 Fraunces, Georgia, serif;
+}
+.about-path-steps p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
 .statement {
   padding-block: clamp(70px, 9vw, 105px);
   background: var(--lilac);
+}
+.statement-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+  align-items: center;
+  gap: clamp(42px, 7vw, 90px);
 }
 .statement blockquote {
   max-width: 22ch;
@@ -1309,6 +1518,9 @@ p {
     Georgia,
     serif;
   letter-spacing: -0.05em;
+}
+.statement .case-companion {
+  margin: 0;
 }
 .contact {
   min-height: calc(100svh - 72px);
@@ -1334,8 +1546,23 @@ p {
     serif;
   letter-spacing: -0.055em;
 }
+.contact-copy {
+  max-width: 47ch;
+  margin: 23px 0 0;
+  color: var(--muted);
+}
+.contact-companion {
+  margin: 34px 0 0;
+}
 .contact-links {
   align-self: end;
+}
+.contact-links .mono-label {
+  margin-bottom: 5px;
+  color: var(--purple-dark);
+}
+.contact-resources-label {
+  margin-top: 34px;
 }
 .contact-links a {
   display: flex;
@@ -1344,6 +1571,12 @@ p {
   padding-block: 17px;
   border-bottom: 1px solid rgba(41, 38, 42, 0.4);
   font-weight: 700;
+}
+.contact-link-main span:first-child {
+  overflow-wrap: anywhere;
+}
+.contact-footer {
+  margin-top: -28px;
 }
 .contact-links a:hover {
   color: var(--purple-dark);
@@ -1375,6 +1608,8 @@ p {
   .case-hero-inner,
   .story,
   .about-grid,
+  .about-path,
+  .statement-inner,
   .contact-box {
     grid-template-columns: 1fr;
   }
@@ -1444,6 +1679,13 @@ p {
   .about-photo {
     min-height: 300px;
   }
+  .about-path-steps article:nth-child(2),
+  .about-path-steps article:nth-child(3) {
+    margin-left: 0;
+  }
+  .statement .case-companion {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1471,6 +1713,15 @@ p {
   }
   .tracking-fields {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .care-sources {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .volveria-identity {
+    grid-template-columns: 58px 1fr;
+  }
+  .volveria-identity img {
+    width: 58px;
   }
   .case-companion {
     grid-template-columns: 78px minmax(0, 1fr);

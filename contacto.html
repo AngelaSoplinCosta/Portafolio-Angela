@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="contact-page">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
       <nav class="nav shell" aria-label="Navegación principal">
@@ -38,13 +38,37 @@
     <main class="shell" id="contenido">
       <section class="contact">
         <div class="contact-box">
-          <div>
+          <div class="contact-intro">
             <p class="eyebrow">Conversemos</p>
             <h1>Una buena pregunta puede ser el comienzo.</h1>
+            <p class="contact-copy">
+              Estoy abierta a conversar sobre oportunidades y proyectos donde
+              se conecten experiencia del cliente, calidad, diseño y tecnología.
+            </p>
+            <aside class="case-companion contact-companion" aria-label="Una invitación de Angela">
+              <div class="case-companion-media" aria-hidden="true">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="assets/angela-pixel-poster.png"
+                >
+                  <source src="assets/angela-pixel.webm" type="video/webm" />
+                </video>
+                <img
+                  class="case-companion-poster"
+                  src="assets/angela-pixel-poster.png"
+                  alt=""
+                />
+              </div>
+              <p>¿Seguimos conversando?</p>
+            </aside>
           </div>
           <div class="contact-links">
-            <a href="mailto:angelasc2024@gmail.com"
-              ><span>Correo</span><span>↗</span></a
+            <p class="mono-label">Escríbeme</p>
+            <a class="contact-link-main" href="mailto:angelasc2024@gmail.com"
+              ><span>angelasc2024@gmail.com</span><span>↗</span></a
             >
             <a
               href="https://www.linkedin.com/in/angela-soplin-costa/"
@@ -52,6 +76,7 @@
               rel="noopener"
               ><span>LinkedIn</span><span>↗</span></a
             >
+            <p class="mono-label contact-resources-label">Documentos</p>
             <a
               href="assets/Angela_Soplin_CV_Profesional_CX_IA_2026_FINAL.pdf"
               target="_blank"
@@ -67,6 +92,10 @@
           </div>
         </div>
       </section>
+      <div class="footer-bottom contact-footer">
+        <p>Angela Soplín · Lima, Perú</p>
+        <a href="index.html">Volver al inicio ↑</a>
+      </div>
     </main>
   </body>
 </html>

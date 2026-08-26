@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="volveria-page">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
       <nav class="nav shell" aria-label="Navegación principal">
@@ -51,16 +51,31 @@
             </div>
           </div>
           <div
-            class="case-cover"
-            aria-label="Principio de conversación de VolverIA"
+            class="case-cover volveria-cover"
+            aria-label="Principio de conversación y límites de VolverIA"
           >
-            <div class="chat-preview">
-              <p>Me preocupa que la pausa se vea como un vacío.</p>
-              <p>
-                Podemos empezar por reconocer lo que sí construiste durante ese
-                tiempo.
-              </p>
-              <p>Escuchar → orientar → derivar cuando corresponde.</p>
+            <div class="volveria-system">
+              <div class="prototype-status">
+                <span aria-hidden="true"></span> Prototipo en validación
+              </div>
+              <div class="volveria-identity">
+                <img src="assets/vuelvo-avatar.png" alt="Avatar de VolverIA" />
+                <div>
+                  <small>VolverIA</small>
+                  <strong>Una conversación con límites claros</strong>
+                </div>
+              </div>
+              <div class="guided-chat">
+                <p>Me preocupa que la pausa se vea como un vacío.</p>
+                <p>
+                  Empecemos por reconocer lo que sí construiste durante ese
+                  tiempo.
+                </p>
+              </div>
+              <div class="guardrail-row">
+                <span>Escucha</span><span>Orienta</span
+                ><span>Deriva cuando corresponde</span>
+              </div>
             </div>
           </div>
         </div>
@@ -73,6 +88,21 @@
         ><a href="#evidencia">Evidencia</a
         ><a href="#aprendizaje">Aprendizaje</a>
       </nav>
+
+      <section class="case-snapshot" aria-label="Resumen del caso">
+        <div>
+          <span>La necesidad</span>
+          <strong>Retomar la carrera sin borrar la pausa</strong>
+        </div>
+        <div>
+          <span>La propuesta</span>
+          <strong>Orientación conversacional en cuatro módulos</strong>
+        </div>
+        <div>
+          <span>El estado</span>
+          <strong>Prototipo funcional en prueba y validación</strong>
+        </div>
+      </section>
 
       <article>
         <section class="story" id="contexto">
@@ -197,6 +227,25 @@
         <section class="story" id="decisiones">
           <div class="story-label">04 · Decisiones</div>
           <div class="story-content">
+            <aside class="case-companion" aria-label="Una idea de Angela">
+              <div class="case-companion-media" aria-hidden="true">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="assets/angela-pixel-poster.png"
+                >
+                  <source src="assets/angela-pixel.webm" type="video/webm" />
+                </video>
+                <img
+                  class="case-companion-poster"
+                  src="assets/angela-pixel-poster.png"
+                  alt=""
+                />
+              </div>
+              <p>Acompañar también implica saber cuándo detenerse.</p>
+            </aside>
             <h2>Dos límites terminaron definiendo el agente.</h2>
             <div class="detail-grid">
               <div class="detail-card">
