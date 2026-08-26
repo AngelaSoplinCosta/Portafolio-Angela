@@ -5,9 +5,6 @@
   --lilac-light: #eeeafb;
   --purple: #8f70d8;
   --purple-dark: #6749ae;
-  --teal: #2f9b8f;
-  --teal-dark: #25544f;
-  --mint: #b9e2dc;
   --charcoal: #29262a;
   --muted: #675f6c;
   --line: rgba(41, 38, 42, 0.18);
@@ -610,7 +607,7 @@ p {
   color: white;
 }
 .volveria-preview {
-  background: linear-gradient(135deg, rgba(47, 155, 143, 0.95), #24afa5);
+  background: linear-gradient(135deg, var(--purple-dark), #9b82dd);
 }
 .volveria-preview .visual-label {
   color: white;
@@ -642,8 +639,8 @@ p {
 }
 .volveria-preview .chat-preview p:nth-child(2) {
   width: 82%;
-  background: var(--mint);
-  color: var(--teal-dark);
+  background: var(--lilac-light);
+  color: var(--charcoal);
 }
 .volveria-preview .chat-preview small {
   color: white;
