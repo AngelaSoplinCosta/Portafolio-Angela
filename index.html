@@ -99,16 +99,20 @@
 
           <div class="timeline" aria-label="Evolución profesional de Angela">
             <div class="timeline-step">
-              <b>2022</b><span>Operaciones y atención</span>
+              <b>2022</b><span>Operaciones</span
+              ><small>Conocer el servicio desde dentro.</small>
             </div>
             <div class="timeline-step">
-              <b>2023–2024</b><span>Experiencia y calidad</span>
+              <b>2023–2024</b><span>Experiencia y calidad</span
+              ><small>Escuchar, ordenar y mejorar.</small>
             </div>
             <div class="timeline-step">
-              <b>2024–2025</b><span>Voz del Cliente B2B</span>
+              <b>2024–2025</b><span>Voz del Cliente B2B</span
+              ><small>Conectar señales con decisiones.</small>
             </div>
             <div class="timeline-step">
-              <b>Hoy</b><span>Diseño, automatización e IA</span>
+              <b>Hoy</b><span>Diseño, automatización e IA</span
+              ><small>Crear y probar nuevas soluciones.</small>
             </div>
           </div>
         </div>
@@ -147,15 +151,20 @@
                 >
               </div>
               <div
-                class="project-visual"
-                aria-label="Diagrama del ciclo de seguimiento de Centria"
+                class="project-visual centria-preview"
+                aria-label="Matriz de seguimiento y resultados del caso Centria"
               >
-                <span class="visual-label">Señal → decisión → cierre</span>
-                <div class="trace-flow">
-                  <div>Feedback del cliente</div>
-                  <div>Hallazgo priorizado</div>
-                  <div>Responsable y evidencia</div>
-                  <div>Cierre trazable</div>
+                <span class="visual-label">Seguimiento visible</span>
+                <div class="matrix-preview">
+                  <div class="matrix-sheet" aria-hidden="true">
+                    <b>Matriz de seguimiento</b>
+                    <small>hallazgo · responsable · evidencia</small>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="result-badges">
+                    <strong><b>100%</b> observaciones cerradas</strong>
+                    <strong><b>+10 pp</b> en respuesta NPS</strong>
+                  </div>
                 </div>
               </div>
             </article>
@@ -178,18 +187,28 @@
                 class="project-visual"
                 aria-label="Comparación del proceso antes y después en Estar Bien"
               >
-                <span class="visual-label">Antes y después</span>
-                <div class="before-after">
+                <span class="visual-label">De reactivo a trazable</span>
+                <div class="before-after service-preview">
                   <div class="process-card">
+                    <small>Antes · reactivo</small>
                     <b>Casos sin criterios compartidos</b>
-                    <span>Duplicidad</span><span>Escalaciones sin contexto</span
-                    ><span>Tiempos invisibles</span>
+                    <svg viewBox="0 0 180 58" aria-hidden="true">
+                      <path d="M4 12c28 36 45-10 70 22s44-23 101 11" />
+                    </svg>
+                    <span>Duplicidad · escalaciones sin contexto</span>
                   </div>
                   <div class="process-arrow" aria-hidden="true">→</div>
                   <div class="process-card after">
-                    <b>Un modelo común</b>
-                    <span>Tipificar</span><span>Priorizar</span
-                    ><span>Resolver</span>
+                    <small>Después · modelo TO-BE</small>
+                    <b>Tipificación, criticidad y SLAs</b>
+                    <div class="process-steps">
+                      <span>Tipificar</span><span>Priorizar</span
+                      ><span>Resolver</span>
+                    </div>
+                    <div class="mini-results">
+                      <strong>90% <small>CSAT</small></strong
+                      ><strong>−20% <small>tiempo</small></strong>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -208,14 +227,24 @@
                 >
               </div>
               <div
-                class="project-visual"
+                class="project-visual volveria-preview"
                 aria-label="Ejemplo simplificado de una conversación de VolverIA"
               >
-                <span class="visual-label">Escuchar antes de orientar</span>
-                <div class="chat-preview">
-                  <p>Quiero volver, pero siento que perdí confianza.</p>
-                  <p>Tu pausa no borra lo que sabes hacer.</p>
-                  <p>¿Qué te gustaría recuperar primero?</p>
+                <span class="visual-label"
+                  >IA con propósito · en desarrollo</span
+                >
+                <div class="volveria-visual">
+                  <div class="avatar-orbit">
+                    <img
+                      src="assets/vuelvo-avatar.png"
+                      alt="Símbolo del prototipo VolverIA"
+                    />
+                  </div>
+                  <div class="chat-preview">
+                    <p>Tu pausa no borra lo que sabes hacer.</p>
+                    <p>Quiero volver con más confianza.</p>
+                    <small>escuchar → orientar → acompañar</small>
+                  </div>
                 </div>
               </div>
             </article>
@@ -241,14 +270,13 @@
               >
             </div>
           </div>
-          <div
-            class="photo-placeholder"
-            role="img"
-            aria-label="Espacio reservado para una fotografía individual de Angela"
-          >
-            Fotografía individual de Angela pendiente<br />No se utilizará una
-            foto grupal ni una imagen generada.
-          </div>
+          <figure class="meet-photo">
+            <img
+              src="assets/angela-soplin-retrato.jpg"
+              alt="Retrato de Angela Soplín"
+            />
+            <figcaption>Angela Soplín · Lima, Perú</figcaption>
+          </figure>
         </div>
       </section>
     </main>
