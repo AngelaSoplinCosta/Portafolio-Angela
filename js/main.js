@@ -1,14 +1,1 @@
-// Portafolio Angela Soplín — interacciones base
-document.addEventListener('DOMContentLoaded', function () {
-  // asegura que los enlaces internos del menú se desplacen suavemente (respaldo para navegadores sin scroll-behavior CSS)
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      var id = link.getAttribute('href').slice(1);
-      var target = document.getElementById(id);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-});
+if(document.body.classList.contains('home')){for(const href of ['css/home.css','css/previews.css','css/home-actions.css','css/project-integration.css']){const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link)}}document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));const previews={"centria-artifact":[["assets/whatsapp-image-2026-04-23-at-3-28-08-pm--mrpjrhn4-p5o2.jpeg","Encuesta NPS de Centria"],["assets/whatsapp-image-2026-04-23-at-3-28-06-pm-mrpjsrwf-gtdd.jpeg","Comunicación de Centria"]],"journey-artifact":[["assets/captura-de-pantalla-2026-07-17-a-la-s-5--mrpjwki7-7jmd.png","Mensaje de Embajador de Experiencia Estar Bien"],["assets/captura-de-pantalla-2026-07-17-a-la-s-5--mrpjwcv2-l4sv.png","Pantalla de Embajador de Experiencia Estar Bien"]],"volveria-artifact":[["assets/volveria-chat-1.png","Conversación de VolverIA"],["assets/volveria-chat-2.png","Otra conversación de VolverIA"]]};Object.entries(previews).forEach(([className,items])=>{const frame=document.querySelector('.'+className);if(!frame)return;frame.classList.add('project-preview');frame.innerHTML='';items.forEach(([src,alt])=>{const image=document.createElement('img');image.src=src;image.alt=alt;frame.appendChild(image)})});const thinkingLink=document.querySelector('.home-now .new-button');if(thinkingLink)thinkingLink.innerHTML='Conoce mi forma de pensar <b>→</b>'});
