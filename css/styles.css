@@ -414,13 +414,13 @@ p {
   height: 42px;
   border-radius: 9px;
   background: var(--lilac-light);
-  border-top: 5px solid var(--teal);
+  border-top: 5px solid var(--purple-dark);
 }
 .matrix-sheet span:nth-of-type(2) {
   border-color: var(--purple);
 }
 .matrix-sheet span:nth-of-type(3) {
-  border-color: var(--mint);
+  border-color: #b8a7e6;
 }
 .matrix-sheet span:nth-of-type(4) {
   border-color: var(--charcoal);
@@ -433,7 +433,7 @@ p {
 .result-badges strong {
   padding: 9px 12px;
   border-radius: 10px;
-  background: var(--teal-dark);
+  background: var(--charcoal);
   color: white;
   font-size: 11px;
   line-height: 1.35;
@@ -545,10 +545,10 @@ p {
   stroke-linecap: round;
 }
 .service-preview .process-card.after {
-  background: var(--teal-dark);
+  background: var(--charcoal);
 }
 .service-preview .process-card.after > small {
-  color: var(--mint);
+  color: var(--lilac);
 }
 .process-steps {
   display: flex;
@@ -560,8 +560,8 @@ p {
   padding: 7px 4px;
   border: 0;
   border-radius: 7px;
-  background: var(--mint);
-  color: var(--teal-dark);
+  background: var(--lilac);
+  color: var(--charcoal);
   font-size: 9px;
   font-weight: 700;
   text-align: center;
@@ -579,7 +579,7 @@ p {
 .mini-results small {
   display: block;
   margin-top: 5px;
-  color: var(--mint);
+  color: var(--lilac);
   font:
     500 9px/1.2 "DM Mono",
     monospace;
