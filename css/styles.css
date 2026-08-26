@@ -202,27 +202,62 @@ p {
   flex-wrap: wrap;
   gap: 22px;
 }
-.hero-principle {
-  min-height: 310px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(30px, 4vw, 48px);
+.hero-guide {
+  position: relative;
+  min-height: 390px;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  padding: 28px 24px 20px;
   border-radius: var(--radius);
   background: var(--lilac);
+  overflow: hidden;
 }
-.hero-principle strong {
+.hero-guide video,
+.guide-poster {
+  width: min(100%, 330px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 20px rgba(41, 38, 42, 0.12));
+}
+.guide-poster {
+  display: none;
+}
+.guide-bubble {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  right: 22px;
+  max-width: 210px;
+  padding: 14px 17px;
+  border-radius: 16px 16px 5px 16px;
+  background: var(--cream);
+  box-shadow: 0 10px 24px rgba(41, 38, 42, 0.1);
+}
+.guide-bubble span,
+.guide-bubble strong {
+  display: block;
+}
+.guide-bubble span {
+  margin-bottom: 5px;
+  color: var(--muted);
   font:
-    650 clamp(27px, 3vw, 38px) / 1.08 Fraunces,
+    500 9px/1.4 "DM Mono",
+    monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.guide-bubble strong {
+  font:
+    650 20px/1.15 Fraunces,
     Georgia,
     serif;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
-.hero-principle svg {
-  width: 100%;
-  margin: 30px 0 12px;
-}
-.hero-principle small {
+.hero-guide small {
+  position: relative;
+  z-index: 2;
+  margin-top: -12px;
   color: var(--muted);
   font:
     500 10px/1.4 "DM Mono",
@@ -1113,8 +1148,8 @@ p {
   .home-hero h1 {
     font-size: clamp(39px, 11vw, 50px);
   }
-  .hero-principle {
-    min-height: 230px;
+  .hero-guide {
+    min-height: 350px;
   }
   .timeline {
     grid-template-columns: 1fr;
@@ -1207,5 +1242,11 @@ p {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+  .hero-guide video {
+    display: none;
+  }
+  .hero-guide .guide-poster {
+    display: block;
   }
 }
