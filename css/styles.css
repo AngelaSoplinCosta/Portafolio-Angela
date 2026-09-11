@@ -1384,12 +1384,8 @@ p {
   overflow: hidden;
   aspect-ratio: 1080 / 525;
   border-radius: 12px;
-}
-.centria-nps-visual img {
-  height: 100%;
-  max-height: none;
-  object-fit: cover;
-  object-position: top;
+  background: url("../assets/whatsapp-image-2026-04-23-at-3-28-08-pm--mrpjrhn4-p5o2.jpeg")
+    top center / 100% auto no-repeat;
 }
 .evidence-grid {
   display: grid;
