@@ -160,6 +160,33 @@ p {
 .editorial-link:focus-visible span {
   transform: translateX(4px);
 }
+.case-cta {
+  min-height: 44px;
+  padding: 11px 15px 11px 17px;
+  border: 1px solid var(--charcoal);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 3px 3px 0 var(--purple);
+  color: var(--charcoal);
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+.case-cta:hover,
+.case-cta:focus-visible {
+  border-color: var(--charcoal);
+  background: var(--charcoal);
+  color: var(--cream);
+  box-shadow: 0 0 0 var(--purple);
+  transform: translate(3px, 3px);
+}
+.case-cta:hover span,
+.case-cta:focus-visible span {
+  color: var(--lilac);
+}
 
 /* Home */
 .home-hero {
@@ -503,6 +530,41 @@ p {
 }
 .trace-flow div:last-child::after {
   content: "";
+}
+.prototype-flow div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 158px;
+  padding: 18px 26px 18px 18px;
+}
+.prototype-flow .flow-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lilac);
+  color: var(--charcoal);
+  font: 700 9px/1 "DM Mono", monospace;
+}
+.prototype-flow strong {
+  font-size: 16px;
+  line-height: 1.1;
+}
+.prototype-flow small {
+  max-width: 19ch;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.prototype-flow div:last-child .flow-icon {
+  background: var(--purple);
+  color: var(--cream);
+}
+.prototype-flow div:last-child small {
+  color: rgba(248, 246, 241, 0.75);
 }
 .before-after {
   display: grid;
@@ -1315,8 +1377,19 @@ p {
   width: 100%;
   max-height: 560px;
   border-radius: 12px;
-  background: var(--cream);
+  background: transparent;
   object-fit: contain;
+}
+.centria-nps-visual {
+  overflow: hidden;
+  aspect-ratio: 1080 / 525;
+  border-radius: 12px;
+}
+.centria-nps-visual img {
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: top;
 }
 .evidence-grid {
   display: grid;
