@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OCR de presupuestos — MVP | Angela Soplín</title>
+    <meta name="description" content="MVP de Angela Soplín para extraer tablas de presupuestos escaneados y revisarlas antes de exportar." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="ocr-page">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Navegación principal">
+        <a class="brand" href="index.html"><i aria-hidden="true">AS</i>Angela Soplín</a>
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a class="active" href="index.html#proyectos" aria-current="page">Proyectos</a>
+          <a href="sobre-mi.html">Sobre mí</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="case-main shell" id="contenido">
+      <section class="case-hero ocr-case-hero">
+        <div class="case-hero-inner">
+          <div class="case-hero-copy">
+            <p class="eyebrow">OCR de presupuestos · MVP en desarrollo</p>
+            <h1>Un PDF escaneado no debería terminar en una transcripción manual.</h1>
+            <p>
+              Estoy construyendo un MVP que extrae tablas de presupuestos,
+              muestra la confianza de cada campo y deja que la persona revise
+              antes de exportar.
+            </p>
+            <div class="case-meta">
+              <span>Rol · Investigación, diseño y construcción</span>
+              <span>Estado · Motor de extracción en evolución</span>
+              <span>Herramientas · Python, OCRmyPDF, Tesseract, openpyxl</span>
+            </div>
+          </div>
+          <div class="case-cover ocr-cover-app" aria-label="Interfaz ilustrada del MVP de OCR">
+            <div class="ocr-browser-bar"><span></span><span></span><span></span><b>OCR presupuestos</b><em>MVP</em></div>
+            <div class="ocr-cover-body">
+              <div class="ocr-upload-card"><small>01 · DOCUMENTO</small><strong>presupuesto_obra.pdf</strong><span>PDF escaneado · listo para extraer</span></div>
+              <div class="ocr-cover-arrow">↓</div>
+              <div class="ocr-extracted-card"><div><small>02 · TABLA DETECTADA</small><b>6 columnas encontradas</b></div><span>Revisar campos</span></div>
+              <div class="ocr-cover-rows"><p><b>Partida</b><i>alta</i></p><p><b>Unidad</b><i>alta</i></p><p><b>Metrado</b><i class="review">revisar</i></p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Contenido del caso">
+        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#proximo">Siguiente etapa</a>
+      </nav>
+
+      <section class="case-snapshot" aria-label="Resumen del proyecto">
+        <div><span>El problema</span><strong>Tablas escaneadas que toman tiempo en transcribirse</strong></div>
+        <div><span>La idea</span><strong>Extraer y revisar antes de convertir en Excel</strong></div>
+        <div><span>El enfoque</span><strong>Automatización con trazabilidad por campo</strong></div>
+      </section>
+
+      <article>
+        <section class="story" id="problema">
+          <div class="story-label">01 · Problema</div>
+          <div class="story-content">
+            <h2>La extracción tiene que ahorrar trabajo sin ocultar incertidumbre.</h2>
+            <p class="story-intro">En presupuestos escaneados, una tabla puede terminar copiada a mano en una hoja de cálculo. Este MVP busca reducir esa fricción sin borrar la revisión humana: la persona puede ver qué se extrajo y dónde conviene mirar de nuevo.</p>
+          </div>
+        </section>
+
+        <section class="story" id="flujo">
+          <div class="story-label">02 · Flujo del MVP</div>
+          <div class="story-content">
+            <div class="case-proof ocr-workbench">
+              <div class="ocr-workbench-head"><div><p class="mono-label">Prototipo de experiencia</p><h3>Del documento a una tabla que aún puedes revisar.</h3></div><span>Vista ilustrada</span></div>
+              <div class="ocr-workbench-grid">
+                <aside class="ocr-steps" aria-label="Pasos del flujo">
+                  <p class="is-active"><b>01</b> Subir documento</p><p><b>02</b> Extraer tabla</p><p><b>03</b> Revisar campos</p><p><b>04</b> Exportar</p>
+                </aside>
+                <div class="ocr-table-panel">
+                  <div class="ocr-panel-top"><div><small>presupuesto_ejemplo.pdf</small><strong>Tabla extraída</strong></div><span>3 filas</span></div>
+                  <div class="ocr-grid-table" role="img" aria-label="Ejemplo ficticio de tabla extraída con una celda marcada para revisión">
+                    <div class="ocr-grid-head">Ítem</div><div class="ocr-grid-head">Descripción</div><div class="ocr-grid-head">Unidad</div><div class="ocr-grid-head">Metrado</div>
+                    <div>01.01</div><div>Preparación del área</div><div>m²</div><div>24.00</div>
+                    <div>01.02</div><div>Instalación base</div><div>m</div><div class="needs-review">18.50 <small>revisar</small></div>
+                    <div>01.03</div><div>Acabado final</div><div>und</div><div>12.00</div>
+                  </div>
+                  <div class="ocr-export-row"><span>La fila marcada conserva su señal de revisión.</span><button type="button">Exportar a Excel</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="story" id="criterio">
+          <div class="story-label">03 · Criterio</div>
+          <div class="story-content">
+            <h2>La automatización debía hacer visible su confianza.</h2>
+            <p class="story-intro">No basta con devolver una tabla. El motor registra cómo obtuvo campos como código, unidad y metrado para que la persona sepa qué revisar antes de continuar.</p>
+            <div class="ocr-trust-grid">
+              <div><span>Campo</span><strong>Código de partida</strong><em>Detectado con alta confianza</em></div>
+              <div><span>Campo</span><strong>Unidad</strong><em>Detectada con alta confianza</em></div>
+              <div><span>Campo</span><strong>Metrado</strong><em class="attention">Marcado para revisión</em></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="story" id="proximo">
+          <div class="story-label">04 · Siguiente etapa</div>
+          <div class="story-content">
+            <h2>Primero presupuestos; después, una experiencia que se adapte.</h2>
+            <p class="story-intro">El motor actual se enfoca en presupuestos. La siguiente etapa es llevarlo a una experiencia web donde sea posible elegir y renombrar columnas, guardar plantillas y exportar el resultado.</p>
+            <a class="editorial-link case-cta" href="contacto.html">Hablemos del proyecto <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="case-footer"><div class="shell case-footer-top"><div><p class="eyebrow">Siguiente proyecto</p><h2>Una campaña clara en cada formato.</h2></div><a class="editorial-link case-cta" href="gv-odontologos.html">Ver campaña GV <span aria-hidden="true">→</span></a></div></footer>
+  </body>
+</html>
