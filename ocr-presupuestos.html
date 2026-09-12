@@ -43,12 +43,24 @@
             </div>
           </div>
           <div class="case-cover ocr-cover-app" aria-label="Interfaz ilustrada del MVP de OCR">
-            <div class="ocr-browser-bar"><span></span><span></span><span></span><b>OCR presupuestos</b><em>MVP</em></div>
+            <div class="ocr-browser-bar"><span></span><span></span><span></span><b>proyecto / presupuesto_obra.pdf</b><em>MVP privado</em></div>
             <div class="ocr-cover-body">
-              <div class="ocr-upload-card"><small>01 · DOCUMENTO</small><strong>presupuesto_obra.pdf</strong><span>PDF escaneado · listo para extraer</span></div>
-              <div class="ocr-cover-arrow">↓</div>
-              <div class="ocr-extracted-card"><div><small>02 · TABLA DETECTADA</small><b>6 columnas encontradas</b></div><span>Revisar campos</span></div>
-              <div class="ocr-cover-rows"><p><b>Partida</b><i>alta</i></p><p><b>Unidad</b><i>alta</i></p><p><b>Metrado</b><i class="review">revisar</i></p></div>
+              <div class="ocr-cover-label"><span>Extracción de tablas</span><b>con revisión humana</b></div>
+              <div class="ocr-cover-workspace">
+                <div class="ocr-source-preview">
+                  <div class="ocr-source-head"><span>Documento original</span><small>pág. 3 / 11</small></div>
+                  <p class="ocr-source-title">PRESUPUESTO DE OBRA</p>
+                  <div class="ocr-source-lines"><i></i><i></i><i></i></div>
+                  <div class="ocr-source-table"><b>Ítem</b><b>Descripción</b><b>Und.</b><b>Metrado</b><span>01.01</span><span>Preparación</span><span>m²</span><span>24.00</span><span>01.02</span><span>Instalación</span><span>m</span><span>18.50</span></div>
+                </div>
+                <div class="ocr-review-drawer">
+                  <p><span>Tabla detectada</span><b>12 filas</b></p>
+                  <div class="ocr-drawer-row"><div><small>Descripción</small><strong>Lista</strong></div><i>98%</i></div>
+                  <div class="ocr-drawer-row"><div><small>Unidad</small><strong>Lista</strong></div><i>96%</i></div>
+                  <div class="ocr-drawer-row pending"><div><small>Metrado</small><strong>Revisar valor</strong></div><i>74%</i></div>
+                  <button type="button">Abrir revisión →</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,13 +95,15 @@
                   <p class="is-active"><b>01</b> Subir documento</p><p><b>02</b> Extraer tabla</p><p><b>03</b> Revisar campos</p><p><b>04</b> Exportar</p>
                 </aside>
                 <div class="ocr-table-panel">
-                  <div class="ocr-panel-top"><div><small>presupuesto_ejemplo.pdf</small><strong>Tabla extraída</strong></div><span>3 filas</span></div>
+                  <div class="ocr-panel-top"><div><small>presupuesto_ejemplo.pdf · pág. 3</small><strong>Tabla extraída</strong></div><span>3 filas de ejemplo</span></div>
+                  <div class="ocr-review-tabs"><b>Resultado</b><span>Documento</span><span>Reglas de extracción</span></div>
                   <div class="ocr-grid-table" role="img" aria-label="Ejemplo ficticio de tabla extraída con una celda marcada para revisión">
                     <div class="ocr-grid-head">Ítem</div><div class="ocr-grid-head">Descripción</div><div class="ocr-grid-head">Unidad</div><div class="ocr-grid-head">Metrado</div>
                     <div>01.01</div><div>Preparación del área</div><div>m²</div><div>24.00</div>
                     <div>01.02</div><div>Instalación base</div><div>m</div><div class="needs-review">18.50 <small>revisar</small></div>
                     <div>01.03</div><div>Acabado final</div><div>und</div><div>12.00</div>
                   </div>
+                  <div class="ocr-review-insight"><span>Campo seleccionado</span><p><b>Metrado</b> fue detectado, pero su confianza baja deja una señal para revisar el valor junto al documento.</p></div>
                   <div class="ocr-export-row"><span>La fila marcada conserva su señal de revisión.</span><button type="button">Exportar a Excel</button></div>
                 </div>
               </div>
