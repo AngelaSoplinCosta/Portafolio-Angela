@@ -67,7 +67,7 @@
       </section>
 
       <nav class="case-nav" aria-label="Contenido del caso">
-        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#evidencia-tecnica">Evidencia técnica</a><a href="#ejemplo-sintetico">Ejemplo</a><a href="#proximo">Siguiente etapa</a>
+        <a href="#problema">Problema</a><a href="#experiencia-quipta">Diseño UX</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#evidencia-tecnica">Evidencia técnica</a><a href="#ejemplo-sintetico">Ejemplo</a><a href="#proximo">Siguiente etapa</a>
       </nav>
 
       <section class="case-snapshot" aria-label="Resumen del proyecto">
@@ -85,8 +85,24 @@
           </div>
         </section>
 
+
+        <section class="story" id="experiencia-quipta">
+          <div class="story-label">02 · Diseño de experiencia</div>
+          <div class="story-content">
+            <h2>Quipta: del PDF a una revisión asistida.</h2>
+            <p class="story-intro">Diseñé un recorrido de cuatro momentos: cargar el documento, organizar los datos extraídos, revisar los campos con incertidumbre y configurar las columnas del resultado.</p>
+            <div class="detail-grid">
+              <div class="detail-card"><p class="mono-label">01 · Carga</p><h3>Elegir documento</h3><p>Seleccionar un presupuesto PDF e indicar el tipo documental.</p></div>
+              <div class="detail-card"><p class="mono-label">02 · Datos</p><h3>Resultados estructurados</h3><p>Presentar los campos identificados y destacar los que requieren comprobación.</p></div>
+              <div class="detail-card"><p class="mono-label">03 · Revisión</p><h3>Decisión humana</h3><p>Comparar el fragmento de origen con el valor detectado o sugerido, sin aceptar cambios automáticamente.</p></div>
+              <div class="detail-card"><p class="mono-label">04 · Configuración</p><h3>Columnas y exportación</h3><p>Permitir la selección y ordenamiento de columnas antes de la salida final; esta parte sigue en diseño.</p></div>
+            </div>
+            <p><strong>Estado:</strong> recorrido y pantallas conceptuales de Quipta; no son capturas de un producto web terminado. La exportación del motor local y la interfaz propuesta tienen alcances distintos.</p>
+          </div>
+        </section>
+
         <section class="story" id="flujo">
-          <div class="story-label">02 · Flujo del MVP</div>
+          <div class="story-label">03 · Flujo del MVP</div>
           <div class="story-content">
             <div class="case-proof ocr-workbench">
               <div class="ocr-workbench-head"><div><p class="mono-label">Prototipo visual · datos sintéticos</p><h3>Del documento a una tabla que aún puedes revisar.</h3></div><span>Vista ilustrada</span></div>
@@ -112,7 +128,7 @@
         </section>
 
         <section class="story" id="criterio">
-          <div class="story-label">03 · Criterio</div>
+          <div class="story-label">04 · Criterio</div>
           <div class="story-content">
             <h2>La automatización debía hacer visible su confianza.</h2>
             <p class="story-intro">No basta con devolver una tabla. El motor registra cómo obtuvo campos como código, unidad y metrado para que la persona sepa qué revisar antes de continuar.</p>
@@ -124,10 +140,10 @@
           </div>
         </section>
 
-        <section class="story" id="evidencia-tecnica"><div class="story-label">04 · Evidencia técnica</div><div class="story-content"><h2>Qué funciona hoy y qué sigue en diseño.</h2><div class="detail-grid"><div class="detail-card"><p class="mono-label">Motor probado</p><h3>PDF escaneado → datos estructurados</h3><p>Probé un flujo local de OCR y extracción de tablas de presupuestos con OCRmyPDF, Tesseract, pdfplumber y openpyxl. El resultado se organiza para revisión en Excel.</p></div><div class="detail-card"><p class="mono-label">Validación</p><h3>Revisión por campo</h3><p>El proceso distingue método y confianza de extracción por campo y admite correcciones humanas. Estos controles ayudan a detectar valores que requieren comprobación.</p></div><div class="detail-card"><p class="mono-label">Pendiente</p><h3>Aplicación web y plantillas</h3><p>La interfaz de esta página es una representación visual con datos ficticios. La selección y reorganización de columnas y la experiencia web siguen como siguientes pasos.</p></div></div><p>El repositorio del motor es privado; no se presentan los valores ilustrativos de confianza de esta página como métricas medidas sobre datos reales.</p></div></section>
+        <section class="story" id="evidencia-tecnica"><div class="story-label">05 · Evidencia técnica</div><div class="story-content"><h2>Qué funciona hoy y qué sigue en diseño.</h2><div class="detail-grid"><div class="detail-card"><p class="mono-label">Motor probado</p><h3>PDF escaneado → datos estructurados</h3><p>Probé un flujo local de OCR y extracción de tablas de presupuestos con OCRmyPDF, Tesseract, pdfplumber y openpyxl. El resultado se organiza para revisión en Excel.</p></div><div class="detail-card"><p class="mono-label">Validación</p><h3>Revisión por campo</h3><p>El proceso distingue método y confianza de extracción por campo y admite correcciones humanas. Estos controles ayudan a detectar valores que requieren comprobación.</p></div><div class="detail-card"><p class="mono-label">Pendiente</p><h3>Aplicación web y plantillas</h3><p>La interfaz de esta página es una representación visual con datos ficticios. La selección y reorganización de columnas y la experiencia web siguen como siguientes pasos.</p></div></div><p>El repositorio del motor es privado; no se presentan los valores ilustrativos de confianza de esta página como métricas medidas sobre datos reales.</p></div></section>
 
         <section class="story" id="ejemplo-sintetico">
-          <div class="story-label">05 · Ejemplo sintético</div>
+          <div class="story-label">06 · Ejemplo sintético</div>
           <div class="story-content">
             <h2>Una tabla de prueba para explicar cómo se revisan los datos.</h2>
             <p class="story-intro">Este ejemplo fue creado exclusivamente para el portafolio. No contiene datos de clientes ni representa una ejecución en vivo del motor OCR. Permite visualizar una comprobación aritmética antes de aceptar un valor extraído.</p>
@@ -152,7 +168,7 @@
         </section>
 
         <section class="story" id="proximo">
-          <div class="story-label">06 · Siguiente etapa</div>
+          <div class="story-label">07 · Siguiente etapa</div>
           <div class="story-content">
             <h2>Primero presupuestos; después, una experiencia que se adapte.</h2>
             <p class="story-intro">El motor actual se enfoca en presupuestos. La siguiente etapa es llevarlo a una experiencia web donde sea posible elegir y renombrar columnas, guardar plantillas y exportar el resultado.</p>
