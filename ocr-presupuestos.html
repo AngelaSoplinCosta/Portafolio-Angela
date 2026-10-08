@@ -33,11 +33,11 @@
             <h1>Un PDF escaneado no debería terminar en una transcripción manual.</h1>
             <p>
               Estoy construyendo un MVP que extrae tablas de presupuestos,
-              muestra la confianza de cada campo y deja que la persona revise
-              antes de exportar.
+              genera una salida estructurada en Excel y registra señales de
+              confianza por campo para facilitar la revisión humana.
             </p>
             <div class="case-meta">
-              <span>Rol · Investigación, diseño y construcción</span>
+              <span>Rol · Diseño del flujo, pruebas y desarrollo asistido</span>
               <span>Estado · Motor de extracción en evolución</span>
               <span>Herramientas · Python, OCRmyPDF, Tesseract, openpyxl</span>
             </div>
@@ -58,7 +58,7 @@
                   <div class="ocr-drawer-row"><div><small>Descripción</small><strong>Lista</strong></div><i>98%</i></div>
                   <div class="ocr-drawer-row"><div><small>Unidad</small><strong>Lista</strong></div><i>96%</i></div>
                   <div class="ocr-drawer-row pending"><div><small>Metrado</small><strong>Revisar valor</strong></div><i>74%</i></div>
-                  <button type="button">Abrir revisión →</button>
+                  <span class="visual-label">Vista conceptual · no interactiva</span>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
       </section>
 
       <nav class="case-nav" aria-label="Contenido del caso">
-        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#proximo">Siguiente etapa</a>
+        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#evidencia-tecnica">Evidencia técnica</a><a href="#proximo">Siguiente etapa</a>
       </nav>
 
       <section class="case-snapshot" aria-label="Resumen del proyecto">
@@ -89,7 +89,7 @@
           <div class="story-label">02 · Flujo del MVP</div>
           <div class="story-content">
             <div class="case-proof ocr-workbench">
-              <div class="ocr-workbench-head"><div><p class="mono-label">Prototipo de experiencia</p><h3>Del documento a una tabla que aún puedes revisar.</h3></div><span>Vista ilustrada</span></div>
+              <div class="ocr-workbench-head"><div><p class="mono-label">Prototipo visual · datos sintéticos</p><h3>Del documento a una tabla que aún puedes revisar.</h3></div><span>Vista ilustrada</span></div>
               <div class="ocr-workbench-grid">
                 <aside class="ocr-steps" aria-label="Pasos del flujo">
                   <p class="is-active"><b>01</b> Subir documento</p><p><b>02</b> Extraer tabla</p><p><b>03</b> Revisar campos</p><p><b>04</b> Exportar</p>
@@ -104,7 +104,7 @@
                     <div>01.03</div><div>Acabado final</div><div>und</div><div>12.00</div>
                   </div>
                   <div class="ocr-review-insight"><span>Campo seleccionado</span><p><b>Metrado</b> fue detectado, pero su confianza baja deja una señal para revisar el valor junto al documento.</p></div>
-                  <div class="ocr-export-row"><span>La fila marcada conserva su señal de revisión.</span><button type="button">Exportar a Excel</button></div>
+                  <div class="ocr-export-row"><span>La fila marcada conserva su señal de revisión.</span><span class="visual-label">Exportación · paso ilustrativo</span></div>
                 </div>
               </div>
             </div>
@@ -124,8 +124,10 @@
           </div>
         </section>
 
+        <section class="story" id="evidencia-tecnica"><div class="story-label">04 · Evidencia técnica</div><div class="story-content"><h2>Qué funciona hoy y qué sigue en diseño.</h2><div class="detail-grid"><div class="detail-card"><p class="mono-label">Motor probado</p><h3>PDF escaneado → datos estructurados</h3><p>Probé un flujo local de OCR y extracción de tablas de presupuestos con OCRmyPDF, Tesseract, pdfplumber y openpyxl. El resultado se organiza para revisión en Excel.</p></div><div class="detail-card"><p class="mono-label">Validación</p><h3>Revisión por campo</h3><p>El proceso distingue método y confianza de extracción por campo y admite correcciones humanas. Estos controles ayudan a detectar valores que requieren comprobación.</p></div><div class="detail-card"><p class="mono-label">Pendiente</p><h3>Aplicación web y plantillas</h3><p>La interfaz de esta página es una representación visual con datos ficticios. La selección y reorganización de columnas y la experiencia web siguen como siguientes pasos.</p></div></div><p>El repositorio del motor es privado; no se presentan los valores ilustrativos de confianza de esta página como métricas medidas sobre datos reales.</p></div></section>
+
         <section class="story" id="proximo">
-          <div class="story-label">04 · Siguiente etapa</div>
+          <div class="story-label">05 · Siguiente etapa</div>
           <div class="story-content">
             <h2>Primero presupuestos; después, una experiencia que se adapte.</h2>
             <p class="story-intro">El motor actual se enfoca en presupuestos. La siguiente etapa es llevarlo a una experiencia web donde sea posible elegir y renombrar columnas, guardar plantillas y exportar el resultado.</p>
