@@ -2488,3 +2488,17 @@ p {
     display: block;
   }
 }
+
+/* Ajustes de accesibilidad y lectura móvil · casos de QA y OCR */
+.ocr-grid-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.ocr-grid-scroll:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.ocr-grid-scroll .ocr-grid-table { min-width: 480px; }
+.ocr-review-drawer .visual-label, .ocr-export-row .visual-label { display: inline-block; max-width: 100%; font-size: 10px; line-height: 1.5; letter-spacing: 0; text-transform: none; opacity: .85; }
+.case-nav a:focus-visible, .editorial-link:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+@media (max-width: 560px) {
+  .ocr-table-panel { overflow-x: visible; }
+  .ocr-steps { grid-template-columns: repeat(4, minmax(125px, 1fr)); }
+  .ocr-browser-bar b { min-width: 0; overflow-wrap: anywhere; }
+  .ocr-browser-bar em { margin-left: auto; white-space: nowrap; }
+  .case-meta span { overflow-wrap: anywhere; }
+}
