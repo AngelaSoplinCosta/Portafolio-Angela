@@ -67,7 +67,7 @@
       </section>
 
       <nav class="case-nav" aria-label="Contenido del caso">
-        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#evidencia-tecnica">Evidencia técnica</a><a href="#proximo">Siguiente etapa</a>
+        <a href="#problema">Problema</a><a href="#flujo">Flujo</a><a href="#criterio">Criterio</a><a href="#evidencia-tecnica">Evidencia técnica</a><a href="#ejemplo-sintetico">Ejemplo</a><a href="#proximo">Siguiente etapa</a>
       </nav>
 
       <section class="case-snapshot" aria-label="Resumen del proyecto">
@@ -126,8 +126,33 @@
 
         <section class="story" id="evidencia-tecnica"><div class="story-label">04 · Evidencia técnica</div><div class="story-content"><h2>Qué funciona hoy y qué sigue en diseño.</h2><div class="detail-grid"><div class="detail-card"><p class="mono-label">Motor probado</p><h3>PDF escaneado → datos estructurados</h3><p>Probé un flujo local de OCR y extracción de tablas de presupuestos con OCRmyPDF, Tesseract, pdfplumber y openpyxl. El resultado se organiza para revisión en Excel.</p></div><div class="detail-card"><p class="mono-label">Validación</p><h3>Revisión por campo</h3><p>El proceso distingue método y confianza de extracción por campo y admite correcciones humanas. Estos controles ayudan a detectar valores que requieren comprobación.</p></div><div class="detail-card"><p class="mono-label">Pendiente</p><h3>Aplicación web y plantillas</h3><p>La interfaz de esta página es una representación visual con datos ficticios. La selección y reorganización de columnas y la experiencia web siguen como siguientes pasos.</p></div></div><p>El repositorio del motor es privado; no se presentan los valores ilustrativos de confianza de esta página como métricas medidas sobre datos reales.</p></div></section>
 
+        <section class="story" id="ejemplo-sintetico">
+          <div class="story-label">05 · Ejemplo sintético</div>
+          <div class="story-content">
+            <h2>Una tabla de prueba para explicar cómo se revisan los datos.</h2>
+            <p class="story-intro">Este ejemplo fue creado exclusivamente para el portafolio. No contiene datos de clientes ni representa una ejecución en vivo del motor OCR. Permite visualizar una comprobación aritmética antes de aceptar un valor extraído.</p>
+            <div class="ocr-grid-scroll" role="region" tabindex="0" aria-label="Ejemplo sintético de validación de presupuesto, desplazable horizontalmente">
+              <table class="demo-validation-table">
+                <caption>Presupuesto ficticio · cantidades y precios en soles (S/)</caption>
+                <thead><tr><th scope="col">Partida</th><th scope="col">Descripción</th><th scope="col">Metrado</th><th scope="col">Precio unit.</th><th scope="col">Parcial mostrado</th><th scope="col">Validación</th></tr></thead>
+                <tbody>
+                  <tr><td>01.01</td><td>Preparación del área</td><td>24.00</td><td>150.00</td><td>3,600.00</td><td><span class="demo-validation-ok">Coincide</span></td></tr>
+                  <tr><td>01.02</td><td>Instalación base</td><td>18.50</td><td>120.00</td><td>2,210.00</td><td><span class="demo-validation-warning">Revisar · esperado 2,220.00</span></td></tr>
+                  <tr><td>01.03</td><td>Acabado final</td><td>12.00</td><td>75.00</td><td>900.00</td><td><span class="demo-validation-ok">Coincide</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-card"><p class="mono-label">01 · Regla</p><h3>Comprobar el parcial</h3><p>En este ejemplo, el parcial calculado es metrado × precio unitario. Se contrasta con el valor que aparece en la tabla.</p></div>
+              <div class="detail-card"><p class="mono-label">02 · Hallazgo</p><h3>La fila 01.02 no coincide</h3><p>18.50 × 120.00 = 2,220.00, pero la muestra contiene 2,210.00. La diferencia de S/ 10.00 queda señalada para revisión humana.</p></div>
+              <div class="detail-card"><p class="mono-label">03 · Decisión</p><h3>No corregir a ciegas</h3><p>Se revisa el documento de origen antes de confirmar el valor. Una señal de inconsistencia no identifica por sí sola qué campo está equivocado.</p></div>
+            </div>
+            <p><strong>Alcance de esta muestra:</strong> las cifras y el error se introdujeron deliberadamente para ilustrar criterios de validación. No son tasas de precisión, resultados de un test automatizado ni mediciones del motor.</p>
+          </div>
+        </section>
+
         <section class="story" id="proximo">
-          <div class="story-label">05 · Siguiente etapa</div>
+          <div class="story-label">06 · Siguiente etapa</div>
           <div class="story-content">
             <h2>Primero presupuestos; después, una experiencia que se adapte.</h2>
             <p class="story-intro">El motor actual se enfoca en presupuestos. La siguiente etapa es llevarlo a una experiencia web donde sea posible elegir y renombrar columnas, guardar plantillas y exportar el resultado.</p>
