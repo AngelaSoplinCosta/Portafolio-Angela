@@ -2502,3 +2502,14 @@ p {
   .ocr-browser-bar em { margin-left: auto; white-space: nowrap; }
   .case-meta span { overflow-wrap: anywhere; }
 }
+
+/* Tabla ilustrativa de validación con datos sintéticos */
+.demo-validation-table { width: 100%; min-width: 730px; border-collapse: collapse; margin: 10px 0 20px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.demo-validation-table caption { text-align: left; padding: 0 0 10px; font: 500 11px/1.5 "DM Mono", monospace; color: var(--muted); }
+.demo-validation-table th, .demo-validation-table td { border-bottom: 1px solid var(--line); padding: 13px 10px; text-align: left; vertical-align: middle; }
+.demo-validation-table th { background: var(--charcoal); color: var(--cream); font-size: 11px; font-weight: 600; }
+.demo-validation-table td { background: var(--white); }
+.demo-validation-table td:nth-child(3), .demo-validation-table td:nth-child(4), .demo-validation-table td:nth-child(5) { text-align: right; }
+.demo-validation-ok, .demo-validation-warning { display: inline-block; border-radius: 7px; padding: 5px 7px; font-weight: 650; line-height: 1.4; }
+.demo-validation-ok { background: #e8efe7; color: #275439; }
+.demo-validation-warning { background: #fff0d1; color: #6e4707; }
