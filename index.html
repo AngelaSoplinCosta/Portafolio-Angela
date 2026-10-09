@@ -35,7 +35,7 @@
     </header>
 
     <main id="contenido">
-      <section class="home-hero shell">
+      <section class="home-hero shell" data-reveal>
         <div>
           <p class="eyebrow">
             QA funcional · Análisis de procesos · Automatización · IA aplicada
@@ -267,41 +267,86 @@
     <!-- Piloto de movimiento editorial: solo Home, sin librerías externas. -->
     <script>
       (() => {
-        const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const pixelVideos = document.querySelectorAll(".pixel-signature video");
-        const updateVideoMotion = () => {
-          pixelVideos.forEach((video) => {
-            if (motionPreference.matches) {
-              video.pause();
-            } else {
+        const root = document.documentElement;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const videos = document.querySelectorAll(".pixel-signature video");
+        const sections = [...document.querySelectorAll("[data-reveal]")];
+        let enterObserver;
+        let exitObserver;
+        let lastScrollY = window.scrollY;
+        let scrollFramePending = false;
+
+        // La dirección da personalidad al regreso: al subir, los elementos
+        // reaparecen desde arriba; al bajar, desde abajo.
+        window.addEventListener("scroll", () => {
+          if (scrollFramePending) return;
+          scrollFramePending = true;
+          window.requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
+            const delta = currentScrollY - lastScrollY;
+            if (Math.abs(delta) >= 4) {
+              root.dataset.scrollDirection = delta < 0 ? "up" : "down";
+              lastScrollY = currentScrollY;
+            }
+            scrollFramePending = false;
+          });
+        }, { passive: true });
+
+        const configureMotion = () => {
+          const canAnimate = !reducedMotion.matches && "IntersectionObserver" in window;
+          videos.forEach((video) => {
+            if (canAnimate) {
               video.play().catch(() => {});
+            } else {
+              video.pause();
             }
           });
-          if (motionPreference.matches) {
-            document.documentElement.classList.remove("motion-ready");
-            document.querySelectorAll("[data-reveal]").forEach((element) => {
-              element.classList.add("is-visible");
-            });
+
+          enterObserver?.disconnect();
+          exitObserver?.disconnect();
+
+          if (!canAnimate) {
+            root.classList.remove("motion-ready");
+            sections.forEach((section) => section.classList.add("is-visible"));
+            return;
           }
-        };
-        updateVideoMotion();
-        if (typeof motionPreference.addEventListener === "function") {
-          motionPreference.addEventListener("change", updateVideoMotion);
-        }
-        if (motionPreference.matches || !("IntersectionObserver" in window)) return;
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(({ target, isIntersecting }) => {
-            if (!isIntersecting) return;
-            target.classList.add("is-visible");
-            observer.unobserve(target);
+          // Mantener visibles los bloques ya presentes al cargar la página.
+          // Los que están lejos se preparan para entrar al hacer scroll.
+          const viewportHeight = window.innerHeight;
+          sections.forEach((section) => {
+            const bounds = section.getBoundingClientRect();
+            const initiallyVisible = bounds.bottom > 0 && bounds.top < viewportHeight;
+            section.classList.toggle("is-visible", initiallyVisible);
           });
-        }, { threshold: 0.08, rootMargin: "0px 0px -5% 0px" });
 
-        document.querySelectorAll("[data-reveal]").forEach((target) => {
-          observer.observe(target);
-        });
-        document.documentElement.classList.add("motion-ready");
+          enterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(({ target, isIntersecting }) => {
+              if (isIntersecting) target.classList.add("is-visible");
+            });
+          }, { threshold: 0.08, rootMargin: "-5% 0px -5% 0px" });
+
+          // Se rearma solo cuando el bloque sale COMPLETAMENTE de pantalla;
+          // evita que desaparezca mientras aún está a la vista.
+          exitObserver = new IntersectionObserver((entries) => {
+            entries.forEach(({ target, isIntersecting }) => {
+              if (!isIntersecting) target.classList.remove("is-visible");
+            });
+          }, { threshold: 0, rootMargin: "15% 0px 15% 0px" });
+
+          sections.forEach((section) => {
+            enterObserver.observe(section);
+            exitObserver.observe(section);
+          });
+          root.classList.add("motion-ready");
+        };
+
+        configureMotion();
+        if (typeof reducedMotion.addEventListener === "function") {
+          reducedMotion.addEventListener("change", configureMotion);
+        } else if (typeof reducedMotion.addListener === "function") {
+          reducedMotion.addListener(configureMotion);
+        }
       })();
     </script>
   </body>
