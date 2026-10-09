@@ -2656,3 +2656,18 @@ p {
 .home-portrait-frame img {width:100%;height:100%;border-radius:50%;display:block;object-fit:cover;object-position:center 22%;}
 .home-portrait-caption {font:500 11px/1.6 "DM Mono",monospace;color:#675f6c;text-align:center;letter-spacing:.02em;}
 @media(max-width:800px){.home-portrait-frame{max-width:270px}.home-portrait{margin-top:8px}}
+
+/* Firma editorial en Sobre mí */
+.about-photo figcaption.about-signature {
+  margin-top: 18px;
+  width: 100%;
+  color: var(--purple-dark);
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(29px, 4vw, 48px);
+  font-weight: 650;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  text-align: center;
+  text-wrap: balance;
+}
