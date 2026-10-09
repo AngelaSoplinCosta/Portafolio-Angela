@@ -2749,3 +2749,73 @@ p {
 .contact-pixel-signature .pixel-signature__portrait video {width:100%;height:100%;object-fit:contain;max-width:100%;display:block;clip-path:none;transform:none;}
 .contact-pixel-signature .pixel-signature__copy p {font-size:clamp(21px,2.5vw,32px);}
 @media(max-width:520px){.contact-pixel-signature{grid-template-columns:110px minmax(0,1fr);gap:12px;}.contact-pixel-signature .pixel-signature__copy p{font-size:22px;}}
+
+/* Movimiento editorial · prototipo Home v1
+   Curiosidad: descubrir; análisis: seguir hitos; empatía: ritmo legible.
+   Solo se activa cuando JavaScript confirma soporte y no hay movimiento reducido. */
+@keyframes angela-editorial-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .home-hero > div:first-child > .eyebrow {
+    animation: angela-editorial-enter 520ms cubic-bezier(.22,1,.36,1) both;
+  }
+  .motion-ready .home-hero h1 {
+    animation: angela-editorial-enter 620ms cubic-bezier(.22,1,.36,1) 90ms both;
+  }
+  .motion-ready .home-hero .hero-copy {
+    animation: angela-editorial-enter 620ms cubic-bezier(.22,1,.36,1) 160ms both;
+  }
+  .motion-ready .home-hero .hero-actions {
+    animation: angela-editorial-enter 620ms cubic-bezier(.22,1,.36,1) 220ms both;
+  }
+  .motion-ready .home-hero .home-portrait {
+    animation: angela-editorial-enter 740ms cubic-bezier(.22,1,.36,1) 160ms both;
+  }
+  .motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 17px, 0);
+    transition: opacity 520ms ease-out, transform 520ms cubic-bezier(.22,1,.36,1);
+  }
+  .motion-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .motion-ready .timeline-step:nth-child(2) { transition-delay: 75ms; }
+  .motion-ready .timeline-step:nth-child(3) { transition-delay: 150ms; }
+  .motion-ready .timeline-step:nth-child(4) { transition-delay: 225ms; }
+  .motion-ready .timeline-step::before {
+    transition: transform 280ms ease, background-color 280ms ease;
+  }
+  .motion-ready .timeline-step.is-visible::before {
+    transform: scale(1.18);
+  }
+}
+/* Respuesta discreta a la exploración; no simulamos elementos clicables. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-chapter .project-visual {
+    transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  }
+  .project-chapter:has(.case-cta:hover) .project-visual,
+  .project-chapter:has(.case-cta:focus-visible) .project-visual {
+    border-color: rgba(103,73,174,.48);
+    box-shadow: 0 9px 20px rgba(41,38,42,.065);
+    transform: translate3d(0,-3px,0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready [data-reveal],
+  html.motion-ready [data-reveal].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .home-hero > div:first-child > .eyebrow,
+  .home-hero h1,
+  .home-hero .hero-copy,
+  .home-hero .hero-actions,
+  .home-hero .home-portrait {
+    animation: none !important;
+  }
+}
