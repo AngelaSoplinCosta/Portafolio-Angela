@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="assets/site-motion.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -265,89 +266,5 @@
     </footer>
   
     <!-- Piloto de movimiento editorial: solo Home, sin librerías externas. -->
-    <script>
-      (() => {
-        const root = document.documentElement;
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const videos = document.querySelectorAll(".pixel-signature video");
-        const sections = [...document.querySelectorAll("[data-reveal]")];
-        let enterObserver;
-        let exitObserver;
-        let lastScrollY = window.scrollY;
-        let scrollFramePending = false;
-
-        // La dirección da personalidad al regreso: al subir, los elementos
-        // reaparecen desde arriba; al bajar, desde abajo.
-        window.addEventListener("scroll", () => {
-          if (scrollFramePending) return;
-          scrollFramePending = true;
-          window.requestAnimationFrame(() => {
-            const currentScrollY = window.scrollY;
-            const delta = currentScrollY - lastScrollY;
-            if (Math.abs(delta) >= 4) {
-              root.dataset.scrollDirection = delta < 0 ? "up" : "down";
-              lastScrollY = currentScrollY;
-            }
-            scrollFramePending = false;
-          });
-        }, { passive: true });
-
-        const configureMotion = () => {
-          const canAnimate = !reducedMotion.matches && "IntersectionObserver" in window;
-          videos.forEach((video) => {
-            if (canAnimate) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-
-          enterObserver?.disconnect();
-          exitObserver?.disconnect();
-
-          if (!canAnimate) {
-            root.classList.remove("motion-ready");
-            sections.forEach((section) => section.classList.add("is-visible"));
-            return;
-          }
-
-          // Mantener visibles los bloques ya presentes al cargar la página.
-          // Los que están lejos se preparan para entrar al hacer scroll.
-          const viewportHeight = window.innerHeight;
-          sections.forEach((section) => {
-            const bounds = section.getBoundingClientRect();
-            const initiallyVisible = bounds.bottom > 0 && bounds.top < viewportHeight;
-            section.classList.toggle("is-visible", initiallyVisible);
-          });
-
-          enterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(({ target, isIntersecting }) => {
-              if (isIntersecting) target.classList.add("is-visible");
-            });
-          }, { threshold: 0.08, rootMargin: "-5% 0px -5% 0px" });
-
-          // Se rearma solo cuando el bloque sale COMPLETAMENTE de pantalla;
-          // evita que desaparezca mientras aún está a la vista.
-          exitObserver = new IntersectionObserver((entries) => {
-            entries.forEach(({ target, isIntersecting }) => {
-              if (!isIntersecting) target.classList.remove("is-visible");
-            });
-          }, { threshold: 0, rootMargin: "15% 0px 15% 0px" });
-
-          sections.forEach((section) => {
-            enterObserver.observe(section);
-            exitObserver.observe(section);
-          });
-          root.classList.add("motion-ready");
-        };
-
-        configureMotion();
-        if (typeof reducedMotion.addEventListener === "function") {
-          reducedMotion.addEventListener("change", configureMotion);
-        } else if (typeof reducedMotion.addListener === "function") {
-          reducedMotion.addListener(configureMotion);
-        }
-      })();
-    </script>
   </body>
 </html>
