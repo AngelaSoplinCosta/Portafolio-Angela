@@ -2732,3 +2732,13 @@ p {
  .trajectory-companion .pixel-signature {grid-template-columns:120px minmax(0,1fr);}
  .trajectory-companion .pixel-signature__copy p {font-size:23px;}
 }
+
+/* Firma contextual: aparece durante el relato, no después de sus conclusiones */
+.pixel-story-interlude {display:flex;align-items:center;justify-content:flex-end;
+ margin:clamp(24px,4vw,48px) 0;padding:clamp(14px,2vw,24px) 0;
+ border-block:1px solid rgba(103,73,174,.12);}
+.pixel-story-interlude .pixel-signature {width:min(100%,660px);max-width:660px;margin:0;
+ grid-template-columns:minmax(150px,200px) minmax(0,1fr);}
+.pixel-story-interlude .pixel-signature__portrait {min-height:155px;}
+@media(max-width:700px) {.pixel-story-interlude{justify-content:center;margin:24px 0;}
+ .pixel-story-interlude .pixel-signature{grid-template-columns:minmax(105px,135px) minmax(0,1fr);}}
