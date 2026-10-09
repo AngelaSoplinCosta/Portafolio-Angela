@@ -2687,3 +2687,20 @@ p {
 .case-companion p {font-size:clamp(18px,2vw,23px);padding:19px 24px 19px 26px;line-height:1.25;}
 @media(max-width:800px) {.meet-inner{grid-template-columns:1fr;}.home-pixel-signature{justify-self:center;margin-top:20px;}}
 @media(max-width:520px){.case-companion{grid-template-columns:112px minmax(0,1fr);}.case-companion-media{width:125px;height:125px}.case-companion video,.case-companion-poster{width:152px;height:152px}.case-companion p{padding:14px 16px;font-size:17px;}}
+
+/* Firma pixelada editorial consistente · Home + todos los casos */
+.pixel-signature {display:grid;grid-template-columns:minmax(130px,190px) minmax(0,1fr);
+ align-items:center;gap:clamp(14px,2.8vw,34px);margin:42px auto 45px;
+ max-width:700px;padding:8px 0;background:transparent;border:0;box-shadow:none;}
+.pixel-signature__portrait {position:relative;width:100%;aspect-ratio:1;overflow:hidden;border:0;background:transparent;}
+.pixel-signature__portrait img {width:100%;height:100%;object-fit:cover;object-position:42% 52%;
+ transform:scale(1.16);clip-path:ellipse(43% 48% at 42% 52%);
+ image-rendering:auto;filter:drop-shadow(0 10px 14px rgba(41,38,42,.11));}
+.pixel-signature__copy {min-width:0;}
+.pixel-signature__label {font:500 10px/1.5 "DM Mono",monospace;letter-spacing:.11em;color:#756786;text-transform:uppercase;}
+.pixel-signature__copy p {margin:10px 0 0;font:650 clamp(22px,2.8vw,36px)/1.12 Fraunces,Georgia,serif;letter-spacing:-.045em;color:#29262a;text-wrap:balance;}
+.pixel-signature__copy em {font-style:normal;color:#6749ae;}
+.trajectory .pixel-signature {margin:12px auto 40px;max-width:560px;}
+@media(max-width:600px){.pixel-signature{grid-template-columns:118px minmax(0,1fr);gap:12px;margin:26px auto;}
+ .pixel-signature__copy p{font-size:clamp(19px,5vw,27px);}
+ .pixel-signature__label{font-size:9px;letter-spacing:.05em;}}
