@@ -2714,3 +2714,21 @@ p {
 @media(max-width:760px){.pixel-signature{grid-template-columns:140px minmax(0,1fr);} .trajectory-pixel-wrap{justify-content:center;padding-bottom:28px;}}
 @media(max-width:420px){.pixel-signature{grid-template-columns:110px minmax(0,1fr);} .pixel-signature__copy p{font-size:20px;}}
 @media(prefers-reduced-motion:reduce){.pixel-signature__portrait video{animation:none;}}
+
+/* Trayectoria: la mascota acompaña la línea de tiempo, no aparece debajo */
+.trajectory-panel {grid-template-columns: minmax(230px,.9fr) minmax(0,1.65fr);align-items:center;column-gap:clamp(24px,4vw,60px);}
+.trajectory-panel .timeline {grid-column:2;grid-row:1;padding-top:30px;}
+.trajectory-panel .trajectory-copy {grid-column:1;grid-row:1 / span 2;align-self:center;}
+.trajectory-companion {grid-column:2;grid-row:2;display:flex;justify-content:center;margin-top:-4px;}
+.trajectory-companion .pixel-signature {margin:0;max-width:500px;width:100%;grid-template-columns:minmax(130px,185px) minmax(0,1fr);gap:15px;}
+.trajectory-companion .pixel-signature__copy p {font-size:clamp(23px,2.7vw,33px);}
+@media(max-width:900px) {
+ .trajectory-panel {grid-template-columns:1fr;row-gap:18px;}
+ .trajectory-panel .trajectory-copy,.trajectory-panel .timeline,.trajectory-companion {grid-column:1;grid-row:auto;}
+ .trajectory-companion {justify-content:flex-start;}
+ .trajectory-companion .pixel-signature {max-width:540px;}
+}
+@media(max-width:540px){
+ .trajectory-companion .pixel-signature {grid-template-columns:120px minmax(0,1fr);}
+ .trajectory-companion .pixel-signature__copy p {font-size:23px;}
+}
