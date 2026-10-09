@@ -2615,3 +2615,35 @@ p {
  .brand-case-highlight__strip {gap:8px 14px;}
  .brand-case-highlight__strip span+span::before{margin-right:14px;}
 }
+
+/* Portada y perfil · extensiones coherentes con manual de marca */
+.brand-project-visual.qa-editorial {min-height: 340px;}
+.brand-project-visual .qa-editorial-stages > div {min-height:115px;}
+.about-brand-intro {
+ position:relative;isolation:isolate;overflow:hidden;
+ margin:32px auto 52px;padding:clamp(30px,5vw,65px);
+ background:linear-gradient(140deg,#f2edfb,#e6ddf4);
+ border:1px solid rgba(103,73,174,.15);border-radius:28px;
+}
+.about-brand-intro::after {
+ content:"";position:absolute;z-index:-1;right:-85px;top:-135px;
+ width:290px;height:290px;border:1px solid rgba(103,73,174,.13);
+ border-radius:50%;box-shadow:0 0 0 55px rgba(255,255,255,.12);
+}
+.about-brand-intro h2 {max-width:19ch;margin:18px 0 36px;
+ font:650 clamp(35px,5vw,64px)/1.08 Fraunces,Georgia,serif;letter-spacing:-.045em;}
+.about-brand-intro h2 em {font-style:normal;color:#6749ae;}
+.about-brand-principles {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.about-brand-principles > div {display:flex;flex-direction:column;gap:8px;min-width:0;
+ border:1px solid rgba(255,255,255,.85);border-radius:18px;padding:22px;
+ background:rgba(255,253,249,.65);}
+.about-brand-principles b {color:#6749ae;font:700 13px/1.3 "DM Mono",monospace;}
+.about-brand-principles strong {font:650 21px/1.3 Inter,Arial,sans-serif;}
+.about-brand-principles small {color:#675f6c;font:400 13px/1.5 Inter,Arial,sans-serif;}
+@media(max-width:760px) {
+ .about-brand-intro{padding:28px 22px;border-radius:22px;}
+ .about-brand-principles{grid-template-columns:1fr;gap:10px;}
+ .about-brand-principles > div{padding:16px 18px;}
+ .brand-project-visual.qa-editorial {min-height:auto;}
+ .brand-project-visual .qa-editorial-stages > div {min-height:0;}
+}
