@@ -71,7 +71,7 @@
 
       <section class="trajectory" aria-labelledby="trayectoria-titulo">
         <div class="trajectory-panel shell">
-          <div class="trajectory-copy">
+          <div class="trajectory-copy" data-reveal>
             <p class="eyebrow">Trayectoria</p>
             <h2 class="section-title" id="trayectoria-titulo">
               De entender la operación a diseñar nuevas posibilidades.
@@ -82,24 +82,24 @@
           </div>
 
           <div class="timeline" aria-label="Evolución profesional de Angela">
-            <div class="timeline-step">
+            <div class="timeline-step" data-reveal>
               <b>2022</b><span>Operaciones</span
               ><small>Conocer el servicio desde dentro.</small>
             </div>
-            <div class="timeline-step">
+            <div class="timeline-step" data-reveal>
               <b>2023–2024</b><span>Experiencia y calidad</span
               ><small>Escuchar, ordenar y mejorar.</small>
             </div>
-            <div class="timeline-step">
+            <div class="timeline-step" data-reveal>
               <b>2024–2025</b><span>Voz del Cliente B2B</span
               ><small>Conectar señales con decisiones.</small>
             </div>
-            <div class="timeline-step">
+            <div class="timeline-step" data-reveal>
               <b>Hoy</b><span>Diseño, automatización e IA</span
               ><small>Crear y probar nuevas soluciones.</small>
             </div>
           </div>
-          <div class="trajectory-companion"><aside class="pixel-signature" aria-label="Firma visual de Angela"><div class="pixel-signature__portrait"><video autoplay muted loop playsinline preload="metadata" poster="assets/angela-pixel-poster.png" aria-label="Ilustración animada de Angela usando su laptop"><source src="assets/angela-pixel.webm" type="video/webm"></video></div><div class="pixel-signature__copy"><span class="pixel-signature__label">OBservar · CONECTAR · CREAR</span><p>Primero quiero <em>entender.</em></p></div></aside></div>
+          <div class="trajectory-companion" data-reveal><aside class="pixel-signature" aria-label="Firma visual de Angela"><div class="pixel-signature__portrait"><video autoplay muted loop playsinline preload="metadata" poster="assets/angela-pixel-poster.png" aria-label="Ilustración animada de Angela usando su laptop"><source src="assets/angela-pixel.webm" type="video/webm"></video></div><div class="pixel-signature__copy"><span class="pixel-signature__label">OBservar · CONECTAR · CREAR</span><p>Primero quiero <em>entender.</em></p></div></aside></div>
         </div>
       </section>
 
@@ -119,7 +119,7 @@
           </div>
 
           <div class="project-list">
-            <article class="project-chapter">
+            <article class="project-chapter" data-reveal>
               <div class="project-copy">
                 <p class="project-index">01 · EdTech · QA funcional end-to-end</p>
                 <h3>Validar el agendamiento como una experiencia completa.</h3>
@@ -143,7 +143,7 @@
                 <div class="qa-editorial-footer"><span>Flujo completo</span><span>BDD / Gherkin</span><span>Cross-browser</span></div>
               </div>
             </article>
-            <article class="project-chapter">
+            <article class="project-chapter" data-reveal>
               <div class="project-copy">
                 <p class="project-index">
                   02 · Quipta · OCR y validación de datos
@@ -163,7 +163,7 @@
               </div>
             </article>
 
-            <article class="project-chapter">
+            <article class="project-chapter" data-reveal>
               <div class="project-copy">
                 <p class="project-index">
                   03 · Estar Bien · QA funcional y calidad digital
@@ -183,7 +183,7 @@
               </div>
             </article>
 
-            <article class="project-chapter">
+            <article class="project-chapter" data-reveal>
               <div class="project-copy">
                 <p class="project-index">04 · VolverIA · En desarrollo</p>
                 <h3>Una conversación para acompañar la vuelta al trabajo.</h3>
@@ -202,7 +202,7 @@
               </div>
             </article>
 
-            <article class="project-chapter">
+            <article class="project-chapter" data-reveal>
               <div class="project-copy">
                 <p class="project-index">05 · Centria · Voz del Cliente B2B</p>
                 <h3>De hallazgos dispersos a un sistema trazable.</h3>
@@ -221,7 +221,7 @@
             </article>
           </div>
 
-          <section class="selected-work" aria-labelledby="piezas-titulo">
+          <section class="selected-work" data-reveal aria-labelledby="piezas-titulo">
             <div class="selected-work-copy">
               <p class="eyebrow">Experiencia complementaria</p>
               <h2 class="section-title" id="piezas-titulo">Comunicación digital y mailing.</h2>
@@ -236,7 +236,7 @@
       </section>
 
       <section class="meet" aria-labelledby="conocer-titulo">
-        <div class="meet-inner shell">
+        <div class="meet-inner shell" data-reveal>
           <div>
             <p class="eyebrow">La persona detrás</p>
             <h2 id="conocer-titulo">Hola, soy Angela.</h2>
@@ -263,5 +263,46 @@
       <p>Angela Soplín · Lima, Perú</p>
       <a href="contacto.html">¿Conversamos? ↗</a>
     </footer>
+  
+    <!-- Piloto de movimiento editorial: solo Home, sin librerías externas. -->
+    <script>
+      (() => {
+        const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const pixelVideos = document.querySelectorAll(".pixel-signature video");
+        const updateVideoMotion = () => {
+          pixelVideos.forEach((video) => {
+            if (motionPreference.matches) {
+              video.pause();
+            } else {
+              video.play().catch(() => {});
+            }
+          });
+          if (motionPreference.matches) {
+            document.documentElement.classList.remove("motion-ready");
+            document.querySelectorAll("[data-reveal]").forEach((element) => {
+              element.classList.add("is-visible");
+            });
+          }
+        };
+        updateVideoMotion();
+        if (typeof motionPreference.addEventListener === "function") {
+          motionPreference.addEventListener("change", updateVideoMotion);
+        }
+        if (motionPreference.matches || !("IntersectionObserver" in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(({ target, isIntersecting }) => {
+            if (!isIntersecting) return;
+            target.classList.add("is-visible");
+            observer.unobserve(target);
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -5% 0px" });
+
+        document.querySelectorAll("[data-reveal]").forEach((target) => {
+          observer.observe(target);
+        });
+        document.documentElement.classList.add("motion-ready");
+      })();
+    </script>
   </body>
 </html>
