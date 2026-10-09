@@ -2742,3 +2742,10 @@ p {
 .pixel-story-interlude .pixel-signature__portrait {min-height:155px;}
 @media(max-width:700px) {.pixel-story-interlude{justify-content:center;margin:24px 0;}
  .pixel-story-interlude .pixel-signature{grid-template-columns:minmax(105px,135px) minmax(0,1fr);}}
+
+/* Contacto · personaje completo, sin recorte lateral */
+.contact-pixel-signature {width:100%;max-width:500px;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:16px;margin:28px 0 0;}
+.contact-pixel-signature .pixel-signature__portrait {width:100%;aspect-ratio:1;min-width:0;overflow:visible;}
+.contact-pixel-signature .pixel-signature__portrait video {width:100%;height:100%;object-fit:contain;max-width:100%;display:block;clip-path:none;transform:none;}
+.contact-pixel-signature .pixel-signature__copy p {font-size:clamp(21px,2.5vw,32px);}
+@media(max-width:520px){.contact-pixel-signature{grid-template-columns:110px minmax(0,1fr);gap:12px;}.contact-pixel-signature .pixel-signature__copy p{font-size:22px;}}
