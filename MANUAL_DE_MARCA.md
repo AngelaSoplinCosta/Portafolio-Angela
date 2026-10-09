@@ -148,7 +148,7 @@ Estos son los **tres atributos principales elegidos por Angela** y deben guiar e
 
 | Comportamiento | Uso previsto | Duración inicial orientativa |
 |---|---|---|
-| Aparición de contenido | Introducir título, evidencia o nuevo apartado al entrar en pantalla, una sola vez. | 350–550 ms |
+| Aparición de contenido | Introducir título, evidencia o nuevo apartado al entrar en pantalla; reactivar al regresar desde arriba o abajo cuando el bloque salió por completo de pantalla. | 350–550 ms |
 | Hover / focus | Confirmar interactividad de enlaces, botones o tarjetas. | 150–220 ms |
 | Línea de tiempo | Resaltar el hito que se está leyendo; sin desplazar el contenido inesperadamente. | 250–400 ms |
 | Transición entre proyectos | Dar continuidad sin ocultar información ni bloquear navegación. | 220–350 ms |
@@ -184,10 +184,12 @@ Estos son los **tres atributos principales elegidos por Angela** y deben guiar e
 
 **Estado:** código incorporado a `index.html` y `css/styles.css`; pendiente validación visual en GitHub Pages y en pantalla móvil.
 
-- **Curiosidad:** entrada escalonada del mensaje inicial; revelado de proyectos al hacer scroll; respuesta sutil del visual del proyecto cuando se interactúa con su enlace.
+- **Curiosidad:** entrada escalonada del mensaje inicial; revelado bidireccional de trayectoria y proyectos al bajar **y al subir**; respuesta sutil del visual del proyecto cuando se interactúa con su enlace.
 - **Análisis:** los cuatro hitos de Trayectoria aparecen con una secuencia breve, manteniendo la muñequita junto al recorrido.
-- **Empatía:** efectos de una sola entrada, sin animaciones de scroll obligatorias ni librerías externas; respeto a `prefers-reduced-motion` y pausa de la animación pixelada cuando la preferencia está activa.
+- **Empatía:** efectos discretos que se rearman al salir por completo de pantalla (sin parpadeos mientras se lee), sin scroll forzado ni librerías externas; respeto a `prefers-reduced-motion` y pausa de la animación pixelada cuando la preferencia está activa.
 - **Velocidades piloto:** entrada ~520–740 ms, revelado ~520 ms y respuesta de enlaces ~220 ms.
+
+**Movimiento de regreso:** cuando el usuario vuelve a subir, un bloque puede reaparecer desde arriba; al bajar, desde abajo. La animación no se reinicia mientras el bloque sigue visible. El Home es el piloto actual; falta validarlo antes de extender este comportamiento a todas las páginas.
 
 **Criterios de aprobación antes de extender al resto del sitio:** revisar ritmo real en desktop/móvil, que no haya contenido invisible con JS desactivado, que los enlaces sean utilizables con teclado, que no haya elementos que salten y que la identidad se mantenga editorial. Ajustar según la observación de Angela antes de aplicar al resto de páginas.
 
