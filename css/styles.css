@@ -2513,3 +2513,14 @@ p {
 .demo-validation-ok, .demo-validation-warning { display: inline-block; border-radius: 7px; padding: 5px 7px; font-weight: 650; line-height: 1.4; }
 .demo-validation-ok { background: #e8efe7; color: #275439; }
 .demo-validation-warning { background: #fff0d1; color: #6e4707; }
+
+/* Ajustes finales de identidad visual */
+.about-photo { display: flex; flex-direction: column; align-items: center; }
+.about-photo img { width: min(100%, 300px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: center 22%; border: 4px solid #fff; box-shadow: 0 12px 32px rgba(65,48,84,.13); }
+.hero-guide .typing-indicator { position: absolute; z-index: 4; right: max(5%, 14px); top: 59%; display:flex; gap: 5px; background: #fff; border: 2px solid #30292e; border-radius: 6px; padding: 9px 10px; pointer-events: none; }
+.hero-guide .typing-indicator i { width: 8px; height: 8px; background: #ae8ae9; opacity: 0; border-radius: 2px; animation: lilac-typing 1.8s infinite; }
+.hero-guide .typing-indicator i:nth-child(2) { animation-delay: .35s; }
+.hero-guide .typing-indicator i:nth-child(3) { animation-delay: .7s; }
+@keyframes lilac-typing { 0%, 8% {opacity:0} 20%, 74% {opacity:1} 84%,100%{opacity:0} }
+@media (max-width: 560px) { .hero-guide .typing-indicator { right: 5%; top: 58%; } }
+@media (prefers-reduced-motion: reduce) { .hero-guide .typing-indicator i { animation: none; opacity: 1; } }
