@@ -180,6 +180,17 @@ Estos son los **tres atributos principales elegidos por Angela** y deben guiar e
 - Animaciones opcionales y respeto a `prefers-reduced-motion`.
 - Revisar portada y tarjetas en escritorio (≥1024 px), tableta (~768 px) y móvil (360–430 px).
 
+## Piloto implementado · Home (octubre de 2026)
+
+**Estado:** código incorporado a `index.html` y `css/styles.css`; pendiente validación visual en GitHub Pages y en pantalla móvil.
+
+- **Curiosidad:** entrada escalonada del mensaje inicial; revelado de proyectos al hacer scroll; respuesta sutil del visual del proyecto cuando se interactúa con su enlace.
+- **Análisis:** los cuatro hitos de Trayectoria aparecen con una secuencia breve, manteniendo la muñequita junto al recorrido.
+- **Empatía:** efectos de una sola entrada, sin animaciones de scroll obligatorias ni librerías externas; respeto a `prefers-reduced-motion` y pausa de la animación pixelada cuando la preferencia está activa.
+- **Velocidades piloto:** entrada ~520–740 ms, revelado ~520 ms y respuesta de enlaces ~220 ms.
+
+**Criterios de aprobación antes de extender al resto del sitio:** revisar ritmo real en desktop/móvil, que no haya contenido invisible con JS desactivado, que los enlaces sean utilizables con teclado, que no haya elementos que salten y que la identidad se mantenga editorial. Ajustar según la observación de Angela antes de aplicar al resto de páginas.
+
 ## Aplicaciones y próximos entregables
 
 **Prioridad 1 — Núcleo aprobado:** mantener paleta, tipografía, fotografía real, titular profesional y «observar → conectar → crear».
