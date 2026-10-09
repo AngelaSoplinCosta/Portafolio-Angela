@@ -26,15 +26,25 @@
 
 **Territorio profesional real:** calidad de servicios digitales, CX y VoC, análisis de incidencias, QA funcional y proyectos de automatización e IA aplicada. Cloud y QA Automation se comunican como formación y práctica en desarrollo, según la evidencia disponible.
 
-### Cinco rasgos de personalidad
+### Tres pilares de personalidad · validados
 
-| Rasgo | Cómo se expresa | Qué evitar |
-|---|---|---|
-| Curiosa | Hace preguntas pertinentes antes de proponer respuestas. | Efectos visuales que no explican nada. |
-| Analítica | Muestra métodos, criterios, resultados y límites. | Cifras sin contexto o métricas exageradas. |
-| Empática | Considera a la persona y al equipo detrás del proceso. | Mensajes grandilocuentes o impersonales. |
-| Creativa | Une disciplinas y diseña maneras claras de explicar. | Plantillas y metáforas repetidas sin criterio. |
-| Rigurosa | Distingue lo implementado de lo exploratorio. | Presentarse como experta en áreas que aún aprende. |
+Estos son los **tres atributos principales elegidos por Angela** y deben guiar el tono, las decisiones visuales y las interacciones del portafolio.
+
+| Pilar | Pregunta que lo representa | Cómo se expresa | Qué evitar |
+|---|---|---|---|
+| **Curiosa** | «¿Qué necesito entender antes de proponer?» | Hace preguntas, explora posibilidades, investiga el contexto y muestra el proceso de descubrimiento. | Efectos llamativos que no ayudan a descubrir nada; soluciones sin contexto. |
+| **Analítica** | «¿Qué patrones y evidencias conectan los puntos?» | Ordena información, explica criterios, contrasta hallazgos y muestra resultados con límites claros. | Métricas sin atribución, diagramas vacíos, promesas técnicas exageradas. |
+| **Empática** | «¿Qué vive la persona detrás de este proceso?» | Comunica de manera accesible, tiene presente a usuarios y equipos y acompaña sin invadir. | Mensajes distantes o impersonales, interacción molesta, movimiento que dificulta la lectura. |
+
+**Cómo se traduce al diseño:**
+
+- **Curiosidad:** microinteracciones que invitan a explorar; detalles progresivos con propósito, sin esconder información esencial.
+- **Análisis:** secuencias visuales claras, línea de tiempo que orienta y resultados fáciles de comparar.
+- **Empatía:** ritmo sereno, lenguaje cercano, navegación sencilla y respeto por preferencias de movimiento reducido.
+
+**Atributos de apoyo, no pilares principales:** creatividad en la forma de conectar disciplinas y rigor al comunicar evidencia, alcance y aprendizajes.
+
+**Filtro de diseño:** cada nueva animación o elemento gráfico debe aportar curiosidad, comprensión analítica o claridad humana. Si no aporta ninguna de las tres, reconsiderarlo.
 
 ### Pilares narrativos
 
