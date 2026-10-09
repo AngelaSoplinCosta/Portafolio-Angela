@@ -180,18 +180,31 @@ Estos son los **tres atributos principales elegidos por Angela** y deben guiar e
 - Animaciones opcionales y respeto a `prefers-reduced-motion`.
 - Revisar portada y tarjetas en escritorio (≥1024 px), tableta (~768 px) y móvil (360–430 px).
 
-## Piloto implementado · Home (octubre de 2026)
+## Sistema de movimiento publicado en código · Todo el portafolio (octubre de 2026)
 
-**Estado:** código incorporado a `index.html` y `css/styles.css`; pendiente validación visual en GitHub Pages y en pantalla móvil.
+**Estado técnico:** sistema compartido incorporado a `assets/site-motion.js` y conectado a las **10 páginas HTML** del portafolio. Guardado en `main` para despliegue automático de GitHub Pages; la revisión final en navegadores sigue siendo necesaria.
 
-- **Curiosidad:** entrada escalonada del mensaje inicial; revelado bidireccional de trayectoria y proyectos al bajar **y al subir**; respuesta sutil del visual del proyecto cuando se interactúa con su enlace.
-- **Análisis:** los cuatro hitos de Trayectoria aparecen con una secuencia breve, manteniendo la muñequita junto al recorrido.
-- **Empatía:** efectos discretos que se rearman al salir por completo de pantalla (sin parpadeos mientras se lee), sin scroll forzado ni librerías externas; respeto a `prefers-reduced-motion` y pausa de la animación pixelada cuando la preferencia está activa.
-- **Velocidades piloto:** entrada ~520–740 ms, revelado ~520 ms y respuesta de enlaces ~220 ms.
+- **Curiosidad:** contenido que se revela al entrar en pantalla y al regresar; interacción sutil con los enlaces de proyectos.
+- **Análisis:** secuencia de los cuatro hitos en Trayectoria; presentación gradual de secciones técnicas y evidencias sin cambiar el orden lógico del contenido.
+- **Empatía:** animaciones de baja intensidad sin capturar el scroll, con preferencias de movimiento reducido, foco visible y sin nuevas dependencias.
+- **Ritmo orientativo:** revelados ~520 ms, aparición inicial en Home ~520–740 ms, respuesta a hover/focus ~220 ms.
 
-**Movimiento de regreso:** cuando el usuario vuelve a subir, un bloque puede reaparecer desde arriba; al bajar, desde abajo. La animación no se reinicia mientras el bloque sigue visible. El Home es el piloto actual; falta validarlo antes de extender este comportamiento a todas las páginas.
+**Al bajar y subir:** el controlador detecta la dirección del desplazamiento. Al entrar a una sección, la muestra suavemente; cuando sale por completo de pantalla, la prepara para reaparecer en la próxima visita. No debe desaparecer mientras aún se lee ni al recibir foco por teclado.
 
-**Criterios de aprobación antes de extender al resto del sitio:** revisar ritmo real en desktop/móvil, que no haya contenido invisible con JS desactivado, que los enlaces sean utilizables con teclado, que no haya elementos que salten y que la identidad se mantenga editorial. Ajustar según la observación de Angela antes de aplicar al resto de páginas.
+**Componentes que participan según cada página:**
+
+| Página | Elementos que toman movimiento |
+|---|---|
+| Home | Titular y retrato iniciales, línea de tiempo, proyectos y presentación personal. |
+| Sobre mí | Introducción, principios, fotografía y trayectoria, firma pixelada, reflexión final. |
+| EdTech, Quipta, Estar Bien, Centria y VolverIA | Portada del caso, resumen visual, datos clave, secciones narrativas y firma pixelada. |
+| Contacto | Introducción y firma animada, canales de contacto. |
+| CV | Portada profesional y apartados de experiencia/formación. |
+| GV Odontólogos | Portada, resumen, evidencia y recorrido de la experiencia. |
+
+**Compatibilidad:** sin librerías externas; si JavaScript no funciona o el usuario solicita movimiento reducido, el contenido permanece disponible sin efecto visual. La animación pixelada se pausa cuando el usuario opta por movimiento reducido.
+
+**Validación pendiente:** confirmar en GitHub Pages la disponibilidad del archivo JS, probar ida y vuelta con scroll en escritorio y móvil, navegación por teclado, preferencia de movimiento reducido y ausencia de contenido invisible.
 
 ## Aplicaciones y próximos entregables
 
@@ -201,7 +214,7 @@ Estos son los **tres atributos principales elegidos por Angela** y deben guiar e
 
 **Prioridad 3 — Por producir:** recurso pixel art final, animado y sin corazones; ejemplos de aplicaciones; componentes reutilizables; inventario de animaciones y guía de uso de marca en LinkedIn, CV y presentaciones.
 
-**Método de trabajo:** validar el criterio de identidad primero, prototipar Home después y extender a los casos únicamente tras revisar interacción, legibilidad y consistencia.
+**Método de trabajo:** revisar primero el sistema compartido ya integrado, registrar ajustes por criterio de marca y afinar progresivamente las interacciones sin añadir efectos innecesarios.
 
 ## Alcance de esta versión
 
