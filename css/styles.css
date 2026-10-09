@@ -2819,3 +2819,11 @@ p {
     animation: none !important;
   }
 }
+
+/* Movimiento editorial v1.1 · entrada también al regresar hacia arriba.
+   Se rearma solo cuando la sección queda completamente fuera de pantalla. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready[data-scroll-direction="up"] [data-reveal]:not(.is-visible) {
+    transform: translate3d(0, -17px, 0);
+  }
+}
