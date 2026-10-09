@@ -2671,3 +2671,19 @@ p {
   text-align: center;
   text-wrap: balance;
 }
+
+/* Firma pixelada secundaria · portada */
+.home-pixel-signature {display:flex; flex-direction:column; align-items:center; justify-self:end; width:min(100%,360px); padding:20px 16px 24px; border-radius:24px; background:linear-gradient(150deg,#f6f0fc,#ece4f7); border:1px solid rgba(103,73,174,.13);}
+.home-pixel-signature__art {width:185px; height:186px; overflow:hidden; position:relative; margin-bottom:12px;}
+.home-pixel-signature__art img {display:block; position:absolute; width:225px; height:225px; max-width:none; object-fit:contain; top:-4px; left:-15px; clip-path:inset(0 21% 0 0); filter:drop-shadow(0 12px 14px rgba(41,38,42,.10));}
+.home-pixel-signature__eyebrow {font:500 10px/1.5 "DM Mono",monospace;letter-spacing:.09em;color:#675f6c;text-align:center;}
+.home-pixel-signature strong {margin-top:9px;font:650 clamp(23px,2.6vw,33px)/1.14 Fraunces,Georgia,serif;text-align:center;letter-spacing:-.035em;}
+.home-pixel-signature strong em {color:#6749ae;font-style:normal;}
+.home-pixel-signature small {margin-top:14px;font:500 11px/1.4 "DM Mono",monospace;color:#675f6c;}
+/* Aumentar presencia de la mascota en relatos sin competir con evidencia técnica. */
+.case-companion {grid-template-columns:170px minmax(0,310px); width:min(100%,480px); margin:12px 0 42px auto;}
+.case-companion-media {width:180px;height:180px;overflow:hidden; position:relative;}
+.case-companion video,.case-companion-poster {width:210px;height:210px;max-width:none;object-fit:contain;clip-path:inset(0 20% 0 0);}
+.case-companion p {font-size:clamp(18px,2vw,23px);padding:19px 24px 19px 26px;line-height:1.25;}
+@media(max-width:800px) {.meet-inner{grid-template-columns:1fr;}.home-pixel-signature{justify-self:center;margin-top:20px;}}
+@media(max-width:520px){.case-companion{grid-template-columns:112px minmax(0,1fr);}.case-companion-media{width:125px;height:125px}.case-companion video,.case-companion-poster{width:152px;height:152px}.case-companion p{padding:14px 16px;font-size:17px;}}
