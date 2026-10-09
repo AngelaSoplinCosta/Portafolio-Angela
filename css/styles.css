@@ -2704,3 +2704,13 @@ p {
 @media(max-width:600px){.pixel-signature{grid-template-columns:118px minmax(0,1fr);gap:12px;margin:26px auto;}
  .pixel-signature__copy p{font-size:clamp(19px,5vw,27px);}
  .pixel-signature__label{font-size:9px;letter-spacing:.05em;}}
+
+/* Reparación de firma animada: sin cortes ni máscaras */
+.pixel-signature {grid-template-columns: minmax(160px,220px) minmax(0,1fr);max-width:750px;}
+.pixel-signature__portrait {width:100%;aspect-ratio:1;overflow:visible;background:transparent;}
+.pixel-signature__portrait video {display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(41,38,42,.12));border:0;}
+.trajectory-pixel-wrap {display:flex;justify-content:flex-end;align-items:center;padding-bottom:35px;}
+.trajectory-pixel-wrap .pixel-signature {width:min(100%,620px);margin:0;}
+@media(max-width:760px){.pixel-signature{grid-template-columns:140px minmax(0,1fr);} .trajectory-pixel-wrap{justify-content:center;padding-bottom:28px;}}
+@media(max-width:420px){.pixel-signature{grid-template-columns:110px minmax(0,1fr);} .pixel-signature__copy p{font-size:20px;}}
+@media(prefers-reduced-motion:reduce){.pixel-signature__portrait video{animation:none;}}
